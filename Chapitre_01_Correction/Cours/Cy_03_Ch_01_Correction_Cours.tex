@@ -78,19 +78,10 @@ Chapitre 1 -- \xxactivite%
 \pagestyle{fancy}
 \thispagestyle{plain}
 \section{Pourquoi corriger un système ?}
-Les systèmes asservis n'ont pas toujours les performances requises par le cahier des charges :
-\begin{itemize}
-\item amortissement insuffisant;
-\item rapidité insuffisante;
-\item précision insuffisante;
-\item absence de stabilité.
-\end{itemize}
-
-\vspace{.25cm}
 
 \noindent
 \begin{minipage}[c]{.6\linewidth}
-\indent Souvent évoqué en lors de l'étude des systèmes asservis, regardons ce qui se cache derrière le bloc correcteur. On peut le considérer comme la partie intelligente du système car de sa part position dans l'architecture d'un système il reçoit l'image de l'écart entre la cosigne et la sortie du système. En fonction de cet écart, en fonction de ses << capacités >> va permettre d'améliorer les performances du système. 
+\hspace{.4cm} Souvent évoqué en lors de l'étude des systèmes asservis, regardons ce qui se cache derrière le bloc correcteur. On peut le considérer comme la partie intelligente du système car de sa part position dans l'architecture d'un système il reçoit l'image de l'écart entre la cosigne et la sortie du système. En fonction de cet écart, en fonction de ses << capacités >> va permettre d'améliorer les performances du système. 
 \end{minipage} \hfill
 \begin{minipage}[c]{.35\linewidth}
 \begin{center}
@@ -98,7 +89,104 @@ Les systèmes asservis n'ont pas toujours les performances requises par le cahie
 \end{center}
 \end{minipage} 
 
+
+\vspace{.25cm}
+
+\noindent
+\begin{minipage}[c]{.6\linewidth}
+\hspace{.4cm} Sur la figure ci-contre est tracée en gris la réponse indicielle d'un système non corrigé et en noir la réponse indicielle du système corrigé. On observe que le système corrigé est :
+\begin{itemize}
+\item plus précis;
+\item plus amorti;
+\item plus rapide. 
+\end{itemize}
+L'objectif du correcteur est donc d'améliorer les caractéristiques tout en assurant la stabilité su système.
+\end{minipage} \hfill
+\begin{minipage}[c]{.35\linewidth}
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_03}
+\end{center}
+\end{minipage} 
+
+\begin{resultat} ~\\
+
+\begin{itemize}
+\item D'après les résultats sur la stabilité des systèmes asservis :
+\begin{itemize}
+\item le correcteur doit permettre d'avoir des marges de gains suffisantes.
+\end{itemize}
+\item D'après les résultats sur la rapidité des systèmes asservis :
+\begin{itemize}
+\item le correcteur doit permettre d'augmenter le gain dans le but d'avoir une pulsation de coupure à \SI{0}{dB} la plus grande possible.
+\end{itemize}
+\item D'après les résultats sur la précision des systèmes asservis :
+\begin{itemize}
+\item le correcteur doit permettre d'augmenter le gain statique de la boucle ouverte pour assurer une bonne précision du système (et d’éventuellement augmenter la classe).
+\end{itemize}
+\end{itemize}
+
+Au vue de ces conclusions, le choix d'un correcteur se fera dans le domaine fréquentiel en utilisant le diagramme de Bode. 
+\end{resultat}
+
+\newpage
+
 \section{Le correcteur proportionnel}
+
+\begin{defi}
+
+Le correcteur proportionnel a pour fonction de transfert $C(p)=K$.
+
+\end{defi}
+
+Prenons le cas d'un système du second ordre bouclé ($K=15$, $\xi=3$, $\omega=1$).
+
+\noindent
+\begin{minipage}[c]{.46\linewidth}
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_04a}
+
+$\text{T}_{5\%}$ : \SI{0,781}{s} -- Écart statique : 0,07
+\end{center}
+
+\end{minipage} \hfill
+\begin{minipage}[c]{.46\linewidth}
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_04b}
+
+Marge de phase 71,94 \degres
+\end{center}
+\end{minipage} 
+
+
+\noindent
+\begin{minipage}[c]{.46\linewidth}
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_05a}
+
+$\text{T}_{5\%}$ : \SI{0,88}{s} -- Écart statique : tend $\to$ 0
+\end{center}
+
+\end{minipage} \hfill
+\begin{minipage}[c]{.46\linewidth}
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_05b}
+
+Marge de phase 6,43 \degres
+\end{center}
+\end{minipage} 
+
+\begin{resultat}
+
+On observe qu'une augmentation du gain proportionnel a pour effet :
+\begin{itemize}
+\item d'améliorer la précision;
+\item d'augmenter la vivacité;
+\item d'augmenter le temps de réponse (à partir d'un certain seuil);
+\item de diminuer l'amortissement;
+\item de diminuer la marge de phase.
+\end{itemize}
+Pour un système d'ordre supérieur à 2, l'augmentation du gain provoque une marge de phase négative et donc une instabilité du système.
+\end{resultat}
 
 \section{Le correcteur proportionnel intégral}
 
