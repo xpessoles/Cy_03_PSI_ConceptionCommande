@@ -61,7 +61,7 @@
 }%figues de la page de garde
 
 \def\xxpied{%
-Cycle 03 -- Concevoir la partie commande des systèmes asservis afin de valider leurs performances.\\
+Cycle 03 -- Concevoir la commande des SLCI\\% afin de valider leurs performances.\\
 Chapitre 1 -- \xxactivite%
 }
 
@@ -128,7 +128,6 @@ L'objectif du correcteur est donc d'améliorer les caractéristiques tout en ass
 Au vue de ces conclusions, le choix d'un correcteur se fera dans le domaine fréquentiel en utilisant le diagramme de Bode. 
 \end{resultat}
 
-\newpage
 
 \section{Le correcteur proportionnel}
 
@@ -176,7 +175,7 @@ Marge de phase 6,43 \degres
 \end{minipage} 
 
 \begin{resultat}
-
+~\\
 On observe qu'une augmentation du gain proportionnel a pour effet :
 \begin{itemize}
 \item d'améliorer la précision;
@@ -189,6 +188,65 @@ Pour un système d'ordre supérieur à 2, l'augmentation du gain provoque une ma
 \end{resultat}
 
 \section{Le correcteur proportionnel intégral}
+\subsection{Le correcteur intégral pur}
+
+\noindent\begin{minipage}[c]{.49\linewidth}
+\begin{defi}  ~\\
+
+Un correcteur intégral pur a pour fonction de transfert $C(p)=\dfrac{U(p)}{\varepsilon(p)}=\dfrac{1}{T_i p}$.
+
+Dans le domaine temporel on a l'équation de comportement suivante : $u(t)=\dfrac{1}{T_i}\int\limits_0^t \varepsilon (\tau)\text{d}\tau$.
+\end{defi}
+
+\end{minipage} \hfill
+\begin{minipage}[c]{.49\linewidth}
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_06}
+\end{center}
+\end{minipage}
+
+\begin{resultat} ~\\
+\vspace{-1.5cm}
+\begin{multicols}{2}
+\begin{center}
+\textbf{Avantages}
+\end{center}
+Ce correcteur améliore la précision lors de la sollicitation par un échelon car il ajoute une intégration dans la boucle ouverte. 
+\begin{center}
+\textbf{Inconvénients}
+\end{center}
+Le déphasage de -90\degres sur tout le spectre de pulsation entraîne une réduction de la marge de phase ce qui peut déstabiliser le système. 
+\end{multicols}
+\end{resultat}
+
+\subsection{Le correcteur proportionnel intégral}
+
+\noindent\begin{minipage}[c]{.49\linewidth}
+\begin{defi} ~\\
+
+Un correcteur intégral pur a pour fonction de transfert $C(p)=\dfrac{U(p)}{\varepsilon(p)}=K\left( 1+\dfrac{1}{T_i p}\right)$.
+
+Dans le domaine temporel on a l'équation de comportement suivante : $u(t)=K\left(\varepsilon(t)+\dfrac{1}{T_i}\int\limits_0^t \varepsilon (\tau)\text{d}\tau\right)$.
+\end{defi}
+
+En développant on obtient $C(p)=K\dfrac{T_i p+1}{T_i p}$. Ce correcteur augmente donc la classe de la boucle ouverte et donc la précision. Si $K>1$ la pulsation de coupure est augmentée, entraînant ainsi une augmentation de la rapidité du système. Enfin, ce correcteur diminue la phase à basse fréquence. Il faut donc faire en sorte que cette chute de phase n'intervienne pas dans la zone de la pulsation de coupure du système.
+\end{minipage} \hfill
+\begin{minipage}[c]{.49\linewidth}
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_07}
+\end{center}
+\end{minipage}
+
+\begin{resultat}
+Le correcteur proportionnel intégral : 
+\begin{center}
+\begin{tabular}{ccccc}
+\textbf{augmente l'amortissement,} &&
+\textbf{augmente la rapidité,} && 
+\textbf{augmente la précision.} \\
+\end{tabular}
+\end{center}
+\end{resultat}
 
 \section{Le correcteur à avance de phase}
 
