@@ -251,6 +251,73 @@ Le correcteur proportionnel intégral :
 \section{Le correcteur à avance de phase}
 
 
+\noindent\begin{minipage}[c]{.49\linewidth}
+\begin{defi} ~\\
+
+Un correcteur à avance de phase a pour fonction de transfert $C(p)=\dfrac{U(p)}{\varepsilon(p)}=K\dfrac{1+a\tau p}{1+\tau p}$ avec $\alpha>1$.
+
+\end{defi}
+Ce correcteur permet d'ajouter de la phase pour les pulsations comprises entre $\dfrac{1}{a\tau}$ et $\dfrac{1}{\tau}$. On montre que $\varphi_{\text{max}} = \arcsin \left( \dfrac{a-1}{a+1}\right)$ et ce pour une pulsation $\omega_{\text{max}}=\dfrac{1}{\tau\sqrt{a}}$.
+
+
+\begin{rem}
+On peut prendre $K=\dfrac{1}{\sqrt{a}}$.
+\end{rem}
+
+\end{minipage} \hfill
+\begin{minipage}[c]{.49\linewidth}
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_08}
+\end{center}
+
+\end{minipage}
+
+\vspace{.25cm}
+
+\begin{demo}
+On a d'une part : $\dfrac{1}{2}\left(\log \left(\dfrac{1}{\tau}\right)+\log \left(\dfrac{1}{a\tau}\right)\right)=\log \left(\dfrac{1}{a\tau^2}\right)^{1/2}=\log \left(\dfrac{1}{\tau\sqrt{a}}\right)$ et $\omega_{\text{max}}=\dfrac{1}{\tau\sqrt{a}}$.
+
+D'autre part, il faudrait calculer 
+$\varphi\left(\omega_{\text{max}}\right)$...
+%
+%=\arg(1+aj\tau\omega_{\text{max}})-\arg(1+\tau j\omega_{\text{max}})
+%=\arg \left(\dfrac{1+a\tau j\omega_{\text{max}}}{1+\tau j\omega_{\text{max}}} \right)$
+%
+%$
+%=\arg \left(\dfrac{\left(1+a\tau j\omega_{\text{max}}\right)\left(1-\tau j\omega_{\text{max}} \right)}{1-\tau^2 \omega_{\text{max}}^2} \right)$
+%
+%$
+%=\arg \left(1+a\tau j\omega_{\text{max}}-\tau j\omega_{\text{max}} +a\tau^2\omega_{\text{max}}^2 \right)
+%$
+%
+%$
+%=\arg \left(\left(1+a\tau^2\omega_{\text{max}}^2\right)+j\left(a\tau \omega_{\text{max}}-\tau \omega_{\text{max}}\right)  \right)$
+%
+%$
+%=\arg \left(2+j\left( \dfrac{a-1}{\sqrt{a}}\right)  \right)$
+
+\end{demo}
+
+
+\noindent
+\begin{minipage}[c]{.46\linewidth}
+Prenons le cas d'un système du second ordre bouclé ($G(p)=\dfrac{100}{\left(p+1\right)^2}$, $a=3,54$, $T=\SI{0,053}{s}$).
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/Avance_BF}
+
+%$\text{T}_{5\%}$ : \SI{0,781}{s} -- Écart statique : 0,07
+\end{center}
+Ici le correcteur permet une augmentation de la rapidité et un meilleur amortissement.
+\end{minipage} \hfill
+\begin{minipage}[c]{.46\linewidth}
+\begin{center}
+\includegraphics[width=\linewidth]{images/Avance_Bode}
+
+%Marge de phase 71,94 \degres
+\end{center}
+\end{minipage} 
+
 \begin{thebibliography}{2}
    \bibitem[1]{ref1} Frédéric Mazet, {\it Cours d'automatique de deuxième année, Lycée Dumont Durville, Toulon.}
       \bibitem[2]{ref2} Florestan Mathurin, {\it Correction des SLCI, Lycée Bellevue, Toulouse, \url{http://florestan.mathurin.free.fr/}.}
