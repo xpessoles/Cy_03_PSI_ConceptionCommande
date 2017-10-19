@@ -295,11 +295,12 @@ Le correcteur proportionnel intégral :
 Un correcteur à avance de phase a pour fonction de transfert $C(p)=\dfrac{U(p)}{\varepsilon(p)}=K\dfrac{1+a\tau p}{1+\tau p}$ avec $\alpha>1$.
 
 \end{defi}
+\begin{resultat}
 Ce correcteur permet d'ajouter de la phase pour les pulsations comprises entre $\dfrac{1}{a\tau}$ et $\dfrac{1}{\tau}$. On montre que $\varphi_{\text{max}} = \arcsin \left( \dfrac{a-1}{a+1}\right)$ et ce pour une pulsation $\omega_{\text{max}}=\dfrac{1}{\tau\sqrt{a}}$.
-
+\end{resultat}
 
 \begin{rem}
-On peut prendre $K=\dfrac{1}{\sqrt{a}}$.
+On peut prendre $K=\dfrac{1}{\sqrt{a}}$ pour ne pas modifier la valeur du gain à la pulsation où on désire ajouter de la phase. 
 \end{rem}
 
 \end{minipage} \hfill
@@ -361,9 +362,13 @@ Ici le correcteur permet une augmentation de la rapidité et un meilleur amortis
 
 \begin{methode}
 \begin{itemize}
-\item En utilisant la BO corrigée.........
+\item En utilisant la BO non corrigée on cherche $\omega_{\SI{0}{dB}}$ tel que le gain est nul.
+\item On calcule $\varphi\left(\omega_{\SI{0}{dB}}\right)$. 
+\item On détermine la phase à ajoutée. 
+\item On calcule $a$. 
+\item On calcule $\tau$.
+\item On calcule $K$. 
 \end{itemize}
-\item Avec la BO non corrigée, on cherche $\omega_{\SI{0}{dB}}$ tel que $\varphi(\omega_{\SI{0}{dB}})$ respecte la marge de phase souhaitée. 
 
 \end{methode}
 
