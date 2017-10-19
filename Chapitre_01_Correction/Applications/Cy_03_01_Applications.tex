@@ -101,9 +101,63 @@ Soit un système de fonction de transfert $G(p)=\dfrac{1}{\left(1+10p\right)\lef
 
 \subparagraph{}\textit{Déterminer $K$ pour avoir une marge de gain de \SI{6}{dB}. Indiquer alors la valeur de l'écart statique.}
 
+\subsection*{Correcteur proportionnel}
+Soit un système de fonction de transfer $G(p)=\dfrac{1}{\left(1+0,05p\right)\left(1+p+2p^2\right)}$. On souhaite corriger le comportement de ce système par un correcteur proportionnel.
+\subparagraph*{}\textit{Déterminer le gain $K$ qui assure une marge de phase de 45\degres.}
+
+
+\subsection*{Correcteur proportionnel}
+\setcounter{exo}{0}
+Soit un système de fonction de transfer $G(p)=\dfrac{10}{p\left(1+p+p^2\right)}$. On souhaite corriger le comportement de ce système par un correcteur proportionnel. On désire une marge de phase de -45\degres et une marge de gain de $\SI{10}{dB}$.
+
+\subparagraph{}\textit{Calculer la marge de phase.}
+\ifprof
+\begin{corrige}
+On trouve $\omega=\SI{2,21}{rad/s}$ et $M_{\varphi}=-60\degres$. Le système est instable.
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{Calculer la marge de gain.}
+\ifprof
+\begin{corrige}
+Pour $\varphi=-180\degres$, on a $\omega=\SI{1}{rad/s}$ et $M_{G}=\SI{-20}{dB}$. Le système est instable.
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{Déterminer $K_p$ pour avoir une marge de phase de 45\degres. Vérifier la marge de gain. }
+\ifprof
+\begin{corrige}
+Pour $\varphi=-135\degres$ on a $\omega=\SI{0,62}{rad/s}$. On trouve un gain proportionnel de 0,54.
+
+La marge de gain est alors de \SI{5,35}{dB} ce qui est inférieur aux \SI{10}{dB} demandés.
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{Déterminer $K_p$ pour avoir une marge de gain de $\SI{10}{dB}$. Vérifier la marge de phase. }
+\ifprof
+\begin{corrige}
+Pour $\varphi=-180\degres$ on a $\omega=\SI{1}{rad/s}$. On trouve un gain proportionnel de 0,316.
+
+La marge de phase est alors de 70\degres ($\omega=\SI{0,333}{rad/s}$.
+\end{corrige}
+\else
+\fi
+
+
+
+\subsection*{Correcteur proportionnel intégral}
+Soit un système de fonction de transfert $G(p)=\dfrac{1}{\left(p+1\right)\left(\dfrac{p}{8}+1\right)}$ placé dans une boucle à retour unitaire.
+
+On souhaite disposer d'une marge de phase de 45\degres en utilisant un correcteur proportionnel intégral de la forme $C(p)=K_p\dfrac{1+\tau p}{\tau p}$.
+
+\subparagraph{}\textit{Déterminer les paramètres du correcteur pour avoir une marge de phase de 45\degres. }
+
 \subsection*{Correcteur à avance de phase}
 Soit un système de fonction de transfert $G(p)=\dfrac{100}{\left(p+1\right)^2}$ placé dans une boucle à retour unitaire.
-\subparagraph*{}\textit{On souhaite corriger ce système de sorte que sa marge de phase soit égale à 45\degres.}
+\subparagraph*{}\textit{Corriger ce système de sorte que sa marge de phase soit égale à 45\degres.}
 
 \ifprof
 \begin{itemize}
