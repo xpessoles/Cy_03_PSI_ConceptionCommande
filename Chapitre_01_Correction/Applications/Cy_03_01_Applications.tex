@@ -24,8 +24,8 @@
 \def\xxtete{Sciences Industrielles de l'Ingénieur}
 
 \def\classe{PSI$\star$ -- MP}
-\def\xxnumpartie{Cycle 02}
-\def\xxpartie{Modéliser les systèmes asservis dans le but de prévoir leur comportement}
+\def\xxnumpartie{Cycle 03}
+\def\xxpartie{Concevoir la partie commande des systèmes asservis afin de valider leurs performances}
 
 
 \def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
@@ -40,10 +40,10 @@
 \def\xxposonglettext{1.45}
 \def\xxposonglety{20}
 %\def\xxonglet{Part. 1 -- Ch. 3}
-\def\xxonglet{Cycle 02}
+\def\xxonglet{Cycle 03}
 
 \def\xxactivite{Applications}
-\def\xxauteur{\textsl{P. Dupas.}}
+\def\xxauteur{}%\textsl{P. Dupas.}}
 
 \def\xxcompetences{%
 \textsl{%
@@ -67,7 +67,7 @@
 
 
 \def\xxpied{%
-Cycle 02 -- Modéliser les SLCI dans le but de prévoir leur comportement\\
+Cycle 03 -- Concevoir la commande des SLCI\\
 Chapitre 1 -- \xxactivite%
 }
 
@@ -95,13 +95,36 @@ Soit un système de fonction de transfert $G(p)=\dfrac{1}{\left(1+10p\right)\lef
 
 \subparagraph{}\textit{Calculer la précision du système $\varepsilon_S$ pour une entrée échelon unitaire.}
 
+\begin{corrige}
+Le système est de classe 0. L'entrée est de type échelon. $K_{\text{BO}}=1$.
+L'écart statique est de $\dfrac{1}{1+1}=\dfrac{1}{2}$.
+\end{corrige}
+
 \subparagraph{}\textit{Tracer dans  le diagramme de Bode la fonction de transfert en boucle ouverte du système.}
 
+\begin{corrige}
+\begin{center}
+\includegraphics[width=.9\linewidth]{images/01_Bode}
+\end{center}
+\end{corrige}
+
 \subparagraph{}\textit{Déterminer $K$ pour avoir une marge de phase de 45\degres. Indiquer alors la valeur de l'écart statique.}
+\begin{corrige}
+$\bullet$ On résout $\varphi\left(\omega\right)=-135\degres$ : 
+$\varphi\left(\omega\right)=-\arctan 10\omega-\arctan 0,1\omega-\arctan 0,2\omega$.
+
+$\varphi\left(\omega\right)=-135\degres \Leftrightarrow \omega = \SI{2,95}{rad.s^{-1}}$ (solveur Excel). 
+
+$\bullet$ Calculons $G_{\text{dB}}(\omega)=-20\log\left(\sqrt{1+10^2\omega^2} \right)-20\log\left(\sqrt{1+0,1^2\omega^2} \right)-20\log\left(\sqrt{1+0,2^2\omega^2} \right)=\SI{-31}{dB}$. Il faut donc augmenter le gain de \SI{31}{dB} soit $K_P=10^{31/20}=35,48$.
+
+\end{corrige}
 
 \subparagraph{}\textit{Déterminer $K$ pour avoir une marge de gain de \SI{6}{dB}. Indiquer alors la valeur de l'écart statique.}
+\begin{corrige}
+\end{corrige}
 
-\subsection*{Correcteur proportionnel}
+
+\subsection*{Correcteur proportionnel} % TETE DE LECTURE
 Soit un système de fonction de transfer $G(p)=\dfrac{1}{\left(1+0,05p\right)\left(1+p+2p^2\right)}$. On souhaite corriger le comportement de ce système par un correcteur proportionnel.
 \subparagraph*{}\textit{Déterminer le gain $K$ qui assure une marge de phase de 45\degres.}
 
