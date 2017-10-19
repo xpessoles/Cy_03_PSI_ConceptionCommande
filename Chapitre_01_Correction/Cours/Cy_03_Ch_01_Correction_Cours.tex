@@ -128,6 +128,7 @@ L'objectif du correcteur est donc d'améliorer les caractéristiques tout en ass
 Au vue de ces conclusions, le choix d'un correcteur se fera dans le domaine fréquentiel en utilisant le diagramme de Bode. 
 \end{resultat}
 
+\newpage
 
 \section{Le correcteur proportionnel}
 
@@ -208,6 +209,9 @@ Pour un système d'ordre supérieur à 2, l'augmentation du gain provoque une ma
 \end{itemize}
 \end{multicols}
 \end{methode}
+
+\newpage
+
 \section{Les correcteurs à action intégrale}
 \subsection{Le correcteur intégral pur}
 
@@ -222,7 +226,7 @@ Dans le domaine temporel on a l'équation de comportement suivante : $u(t)=\dfra
 \end{minipage} \hfill
 \begin{minipage}[c]{.49\linewidth}
 \begin{center}
-\includegraphics[width=\linewidth]{images/fig_06}
+\includegraphics[width=.7\linewidth]{images/fig_06}
 \end{center}
 \end{minipage}
 
@@ -280,6 +284,8 @@ Le correcteur proportionnel intégral :
 \end{itemize}
 
 \end{methode}
+\newpage
+
 \section{Le correcteur à avance de phase}
 
 
@@ -307,7 +313,8 @@ On peut prendre $K=\dfrac{1}{\sqrt{a}}$.
 \vspace{.25cm}
 
 \begin{demo}
-On a d'une part : $\dfrac{1}{2}\left(\log \left(\dfrac{1}{\tau}\right)+\log \left(\dfrac{1}{a\tau}\right)\right)=\log \left(\dfrac{1}{a\tau^2}\right)^{1/2}=\log \left(\dfrac{1}{\tau\sqrt{a}}\right)$ et $\omega_{\text{max}}=\dfrac{1}{\tau\sqrt{a}}$.
+Pour déterminer $\omega_{\max}$ on pourrait déterminer la pulsation pour laquelle la phase est maximum en résolvant $\dfrac{\text{d}\varphi\left(\omega \right)}{\text{d}\omega}=0$. 
+On peut aussi remarquer << graphiquement >> que $\omega_{\text{max}}$ est situé au milieu des deux pulsations de coupures : $\dfrac{1}{2}\left(\log \left(\dfrac{1}{\tau}\right)+\log \left(\dfrac{1}{a\tau}\right)\right)=\log \left(\dfrac{1}{a\tau^2}\right)^{1/2}=\log \left(\dfrac{1}{\tau\sqrt{a}}\right)$ et $\omega_{\text{max}}=\dfrac{1}{\tau\sqrt{a}}$.
 
 D'autre part, il faudrait calculer 
 $\varphi\left(\omega_{\text{max}}\right)$...
@@ -353,6 +360,10 @@ Ici le correcteur permet une augmentation de la rapidité et un meilleur amortis
 
 
 \begin{methode}
+\begin{itemize}
+\item En utilisant la BO corrigée.........
+\end{itemize}
+\item Avec la BO non corrigée, on cherche $\omega_{\SI{0}{dB}}$ tel que $\varphi(\omega_{\SI{0}{dB}})$ respecte la marge de phase souhaitée. 
 
 \end{methode}
 
