@@ -14,6 +14,9 @@
     </lstPolyD>
     <Gain_Classe classe="0" gain="1" retard="0" />
   </FT_H>
+  <FT_C>
+    <param K="[79.430000000000007]" T="[1.0]" a="[2.0]" classe="0" t="P" />
+  </FT_C>
   <Format>
     <H couleur="#000000" epaisseur="3.0" style="-" />
     <C couleur="#FF0000" epaisseur="2" style="-" />

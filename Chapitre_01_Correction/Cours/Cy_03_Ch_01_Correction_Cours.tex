@@ -193,8 +193,8 @@ Pour un système d'ordre supérieur à 2, l'augmentation du gain provoque une ma
 \begin{multicols}{2}
 \textbf{Réglage de la marge de phase :}
 \begin{itemize}
-\item Avec la BO non corrigée, on cherche $\omega_{\SI{0}{dB}}$ tel que $\varphi(\omega_{\SI{0}{dB}})$ respecte la marge de phase souhaitée. 
-\item Avec la BO non corrigée, on calcule $G_{dB}\left(\omega_{\SI{0}{dB}}\right)$. 
+\item En utilisant la BO non corrigée, on cherche $\omega_{\SI{0}{dB}}$ tel que $\varphi(\omega_{\SI{0}{dB}})$ respecte la marge de phase souhaitée. 
+\item En utilisant BO non corrigée, on calcule $G_{dB}\left(\omega_{\SI{0}{dB}}\right)$. 
 \item On cherche $K_p$ tel que $G_{dB}\left(\omega_{\SI{0}{dB}}\right)=0$
 \end{itemize}
 \vspace{.25cm}
@@ -203,8 +203,8 @@ Pour un système d'ordre supérieur à 2, l'augmentation du gain provoque une ma
 
 \textbf{Réglage de la marge de gain :}
 \begin{itemize}
-\item Avec la BO non corrigée, on cherche $\omega_{-180\degres}$ tel que $\varphi(\omega_{-180\degres})=-180\degres$.
-\item Avec la BO non corrigée, on calcule $G_{dB}\left(\omega_{-180\degres}\right)$. 
+\item En utilisant la BO non corrigée, on cherche $\omega_{-180\degres}$ tel que $\varphi(\omega_{-180\degres})=-180\degres$.
+\item En utilisant la BO non corrigée, on calcule $G_{\text{dB}}\left(\omega_{-180\degres}\right)$. 
 \item On cherche $K_p$ tel qu'on ait la marge de gain souhaitée.
 \end{itemize}
 \end{multicols}
@@ -277,9 +277,9 @@ Le correcteur proportionnel intégral :
 
 \begin{methode}
 \begin{itemize}
-\item Avec la BO non corrigée, on cherche $\omega_{\SI{0}{dB}}$ tel que $\varphi(\omega_{\SI{0}{dB}})$ respecte la marge de phase souhaitée. 
-\item Avec la BO non corrigée, on calcule $G_{dB}\left(\omega_{\SI{0}{dB}}\right)$. 
-\item On cherche $K$ tel que $G_{dB}\left(\omega_{\SI{0}{dB}}\right)=0$
+\item En utilisant la BO non corrigée, on cherche $\omega_{\SI{0}{dB}}$ tel que $\varphi(\omega_{\SI{0}{dB}})$ respecte la marge de phase souhaitée. 
+\item En utilisant la BO non corrigée, on calcule $G_{\text{dB}}\left(\omega_{\SI{0}{dB}}\right)$. 
+\item On cherche $K$ tel que $G_{\text{dB}}\left(\omega_{\SI{0}{dB}}\right)=0$
 \item La mise en place de l'effet intégral ne doit pas modifier la position de la pulsation de coupure réglée précédemment. Pour cela, il faut donc que $\dfrac{1}{T_i}<< \omega_{\SI{0}{dB}}$. Usuellement on positionne l'action intégrale une décade avant la pulsation réglée. On a donc $T_i=\dfrac{10}{\omega_{\SI{0}{dB}}}$.
 \end{itemize}
 
