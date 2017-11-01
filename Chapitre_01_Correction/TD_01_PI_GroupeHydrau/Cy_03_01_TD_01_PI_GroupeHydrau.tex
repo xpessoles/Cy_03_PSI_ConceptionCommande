@@ -62,7 +62,7 @@
 }}
 
 \def\xxfigures{
-\includegraphics[width=.3\linewidth]{images/fig_00}
+\includegraphics[width=.6\linewidth]{images/fig_00}
 }%figues de la page de garde
 
 
@@ -391,10 +391,28 @@ Pour avoir aucun dépassement, il est nécessaire que, si la FTBF du système es
 
 On a donc, avec un débit de fuite nul, $\dfrac{P_e(p)}{P_{con}(p)}
 =\dfrac{K_{\text{cap}}K_p\dfrac{K_{\text{pom}}}{1+T_2 p}\dfrac{K_{m}}{1+T_1 p}}{1+K_{\text{cap}}K_p\dfrac{K_{\text{pom}}}{1+T_2 p}\dfrac{K_{m}}{1+T_1 p}}$
-$=\dfrac{K_{\text{cap}}K_pK_{\text{pom}} K_{m}}{\left(1+T_1 p\right)\left(1+T_2 p\right)+K_{\text{cap}}K_pK_{\text{pom}} K_{m}}$
-$=\dfrac{K_{\text{cap}}K_pK_{\text{pom}} K_{m}}{\left(1+T_1 p\right)\left(1+T_2 p\right)+K_{\text{cap}}K_pK_{\text{pom}} K_{m}}$.
 
+$=\dfrac{K_{\text{cap}}K_pK_{\text{pom}} K_{m}}{\left(1+T_1 p\right)\left(1+T_2 p\right)+K_{\text{cap}}K_pK_{\text{pom}} K_{m}}$
+
+%$=\dfrac{
+%K_{\text{cap}}K_pK_{\text{pom}} K_{m}
+%}{
+%\left(1+T_1 p\right)\left(1+T_2 p\right)+K_{\text{cap}}K_pK_{\text{pom}} K_{m}
+%}$
+
+$=\dfrac{
+K_{\text{cap}}K_pK_{\text{pom}} K_{m}
+}{
+\left(T_1 +  T_2\right) p + T_1T_2 p^2+1+K_{\text{cap}}K_pK_{\text{pom}} K_{m}
+}$.
+
+On a alors : $\omega_0 = \sqrt{\dfrac{1+K_{\text{cap}}K_pK_{\text{pom}} K_{m}}{T_1T_2}}$
+et
+
+$\xi=\dfrac{1}{2}\dfrac{T_1+T_2}{\sqrt{T_1T_2 \left(1+K_{\text{cap}}K_pK_{\text{pom}} K_{m}\right)}}$.
  
+En conséquence, $\xi>1\Leftrightarrow \dfrac{\left(T_1+T_2\right)^2-4T_1T_2 }{4T_1T_2 K_{\text{cap}}K_{\text{pom}} K_{m}} > K_p $ et donc $K_p<0,125 $.
+
 \end{corrige}
 \else
 \fi
@@ -404,8 +422,15 @@ $=\dfrac{K_{\text{cap}}K_pK_{\text{pom}} K_{m}}{\left(1+T_1 p\right)\left(1+T_2 
 \textit{À partir des résultats des questions précédentes, conclure quant au choix d’un correcteur proportionnel.}
 \ifprof
 \begin{corrige}
-
+On a donc : 
+\begin{itemize}
+\item $K_p>19$;
+\item $K_p> 2,19$;
+\item $K_p<0,125 $.
+\end{itemize}
+Les 3 conditions sont incompatibles. Un autre correcteur doit être envisagé.
 \end{corrige}
+
 \else
 \fi
 
@@ -420,7 +445,7 @@ On se propose de corriger le système avec le correcteur défini sur le schéma-
 \textit{Déterminer la fonction de transfert $C(p)$ de ce correcteur.}
 \ifprof
 \begin{corrige}
-
+On a $C(p)=\dfrac{K_i}{p}+K_p = \dfrac{K_i+K_p p}{p}= \dfrac{K_i}{p}\left(1+\dfrac{K_p}{K_i} p\right)$.
 \end{corrige}
 \else
 \fi
@@ -438,7 +463,8 @@ On se propose de corriger le système avec le correcteur défini sur le schéma-
 \textit{Quelle est l’influence d’un tel correcteur sur la précision et la stabilité ? Justifier.}
 \ifprof
 \begin{corrige}
-
+L'intégrateur va permettre d'annuler l'erreur (du à la consigne et à la perturbation).
+De plus, suivant le positionnement du correcteur, le déphasage de -90\degres présent en basse fréquence peut déstabiliser le système.
 \end{corrige}
 \else
 \fi
@@ -447,16 +473,16 @@ On se propose de corriger le système avec le correcteur défini sur le schéma-
 \textit{Quelle valeur faut-il donner à $\omega_{\SI{0}{dB}}$ pour répondre au critère de rapidité du cahier des charges ?}
 \ifprof
 \begin{corrige}
-
+On souhaite que $t_e<\SI{40}{s} \Leftrightarrow \dfrac{3}{\omega_{\SI{0}{dB}}}<40 \Leftrightarrow \dfrac{3}{40}<\omega_{\SI{0}{dB}}$ et donc $\omega_{\SI{0}{dB}}>\SI{0,075}{rad.s^{-1}}$.
 \end{corrige}
 \else
 \fi
 
 \subparagraph{}
-\textit{Déterminer alors le rapport $T=K_p/K_i$ pour obtenir la marge de phase spécifiée dans le cahier des charges.}
+\textit{Déterminer alors le rapport $T=K_p/K_i$ pour obtenir la marge de phase spécifiée dans le cahier des charges.} 
 \ifprof
 \begin{corrige}
-
+On désire une marge de phase de 60\degres. Il faut donc que $\varphi\left( \omega_{\SI{0}{dB}}\right)=-120\degres$.
 \end{corrige}
 \else
 \fi
