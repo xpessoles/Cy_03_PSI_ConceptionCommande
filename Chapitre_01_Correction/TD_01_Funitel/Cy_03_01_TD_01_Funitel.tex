@@ -62,7 +62,7 @@
 }}
 
 \def\xxfigures{
-%\includegraphics[width=.3\linewidth]{images/fig_01}
+\includegraphics[width=.3\linewidth]{images/fig_00}
 }%figues de la page de garde
 
 
@@ -162,6 +162,30 @@ On souhaite bénéficier des performances du correcteur proportionnel pour sa ra
 
 \subparagraph{}\textit{En exposant clairement la démarche, montrer que le cahier des charges est satisfait pour la précision vis-à-vis de la perturbation (on considérera $V_C (p) = 0$  et $C_R (p)=R_0/p$). Conclure quant à la pertinence de ce choix de correction. }
 %\end{multicols}
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{\pathfig/fig_05}
+\end{center}
+
+\newpage 
+
+\subsection*{Éléments de correction}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $H_M(p)=\dfrac{K_M}{1+\tau_M p}$ avec $K_M=\dfrac{k_c}{k_ck_e+Rf}=\SI{0,37}{rad.V^{-1}.s^{-1}}$ et $\tau_M=\dfrac{JT}{k_ck_e+Rf}=\SI{6,32}{s}$.
+\item $G(p)=\dfrac{\dfrac{K_CK_S}{1+K_CK_S}}{1+\dfrac{\tau_M}{1+K_CK_S}p}$.
+\item $\quad$
+\item $t_{5\%}=\dfrac{\tau_M}{1+K_CK_S} \Rightarrow K_C>4,1$.
+\item $e_r=\dfrac{V_0}{1+K_CK_S} \Rightarrow K_C>75$.
+\item $U_M=\SI{23976}{V} >> \SI{300}{V}$.
+\item $K=1$, $\omega_0=\sqrt{\dfrac{K_iK_S}{\tau_M}}$, $\xi=\dfrac{1}{2}\dfrac{1}{\sqrt{K_iK_ST_M}}$.
+\item $\quad$.
+\item $\xi=0,6$ et $K_i=0,17$.
+\item $t_{5\%}=\SI{38,5}{s}$.
+\item $\xi=0,7\Rightarrow t_{5\%}=\SI{27,2}{s}$.
+\end{enumerate}
+\end{multicols}
 \end{document}
 \newpage
 
