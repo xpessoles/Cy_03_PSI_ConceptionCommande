@@ -483,6 +483,8 @@ On souhaite que $t_e<\SI{40}{s} \Leftrightarrow \dfrac{3}{\omega_{\SI{0}{dB}}}<4
 \ifprof
 \begin{corrige}
 On désire une marge de phase de 60\degres. Il faut donc que $\varphi\left( \omega_{\SI{0}{dB}}\right)=-120\degres$.
+On a $FTBO(p)=\dfrac{K_i}{p}\left(1+\dfrac{K_p}{K_i} p\right)K_{\text{cap}}\dfrac{K_m}{1+T_1p}\dfrac{K_{\text{pom}}}{1+T_2p}$. Et donc :
+$\varphi(\omega)=-90+\arctan\left( \dfrac{K_p}{K_i}\omega \right)-\arctan\left( T_1\omega \right)-\arctan\left( T_2\omega \right)$ en $\omega_{\SI{0}{dB}}$ on a : $\varphi(0,075)=-90+\arctan\left( \dfrac{K_p}{K_i}0,075\right)-57=-147+\arctan\left( \dfrac{K_p}{K_i}0,075\right)$. On cherche donc $\dfrac{K_p}{K_i}$ tel que $-147+\arctan\left( \dfrac{K_p}{K_i}0,075\right)=-120 \Rightarrow \arctan\left( \dfrac{K_p}{K_i}0,075\right)=27\Rightarrow \dfrac{K_p}{K_i}0,075 = 0,51 \Rightarrow \dfrac{K_p}{K_i}= 6,79$. Ainsi pour avoir une marge de phase supérieure à 60\degres, on doit avoir $\dfrac{K_p}{K_i}> 6,79$.
 \end{corrige}
 \else
 \fi
