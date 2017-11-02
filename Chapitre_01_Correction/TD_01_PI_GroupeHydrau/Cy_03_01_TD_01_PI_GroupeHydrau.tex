@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-%\proffalse
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -62,7 +62,7 @@
 }}
 
 \def\xxfigures{
-\includegraphics[width=.6\linewidth]{images/fig_00}
+\includegraphics[width=.7\linewidth]{images/fig_00}
 }%figues de la page de garde
 
 
@@ -484,20 +484,35 @@ On souhaite que $t_e<\SI{40}{s} \Leftrightarrow \dfrac{3}{\omega_{\SI{0}{dB}}}<4
 \begin{corrige}
 On désire une marge de phase de 60\degres. Il faut donc que $\varphi\left( \omega_{\SI{0}{dB}}\right)=-120\degres$.
 On a $FTBO(p)=\dfrac{K_i}{p}\left(1+\dfrac{K_p}{K_i} p\right)K_{\text{cap}}\dfrac{K_m}{1+T_1p}\dfrac{K_{\text{pom}}}{1+T_2p}$. Et donc :
-$\varphi(\omega)=-90+\arctan\left( \dfrac{K_p}{K_i}\omega \right)-\arctan\left( T_1\omega \right)-\arctan\left( T_2\omega \right)$ en $\omega_{\SI{0}{dB}}$ on a : $\varphi(0,075)=-90+\arctan\left( \dfrac{K_p}{K_i}0,075\right)-57=-147+\arctan\left( \dfrac{K_p}{K_i}0,075\right)$. On cherche donc $\dfrac{K_p}{K_i}$ tel que $-147+\arctan\left( \dfrac{K_p}{K_i}0,075\right)=-120 \Rightarrow \arctan\left( \dfrac{K_p}{K_i}0,075\right)=27\Rightarrow \dfrac{K_p}{K_i}0,075 = 0,51 \Rightarrow \dfrac{K_p}{K_i}= 6,79$. Ainsi pour avoir une marge de phase supérieure à 60\degres, on doit avoir $\dfrac{K_p}{K_i}> 6,79$.
+$\varphi(\omega)=-90+\arctan\left( \dfrac{K_p}{K_i}\omega \right)-\arctan\left( T_1\omega \right)-\arctan\left( T_2\omega \right)$ en $\omega_{\SI{0}{dB}}$ on a : $\varphi(0,075)=-90+\arctan\left( \dfrac{K_p}{K_i}0,075\right)-57=-147+\arctan\left( \dfrac{K_p}{K_i}0,075\right)$. On cherche donc $\dfrac{K_p}{K_i}$ tel que $-147+\arctan\left( \dfrac{K_p}{K_i}0,075\right)=-120 \Rightarrow \arctan\left( \dfrac{K_p}{K_i}0,075\right)=27\Rightarrow \dfrac{K_p}{K_i}0,075 = 0,51 \Rightarrow \dfrac{K_p}{K_i}= 6,79$. Ainsi pour avoir une marge de phase supérieure à 60\degres, on doit avoir $T=\dfrac{K_p}{K_i}> 6,79$.
 \end{corrige}
 \else
 \fi
+
+0,8911
 
 \subparagraph{}
 \textit{En déduire les valeurs de $K_p$ et de $K_i$ qui permettent de régler rapidité et marge de phase.}
 \ifprof
 \begin{corrige}
+On souhaite que le gain soit nul lorsque $\omega_{\SI{0}{dB}}=\SI{0,075}{rad.s^{-1}}$. 
 
+On a $G_{\text{dB}}(\omega)=20\log\left(\sqrt{1+\dfrac{K_p^2}{K_i^2}\omega^2} \right) + 20\log K_i +20\log\left( K_{\text{cap}}K_{\text{pom}}K_m\right)-20\log\omega +20\log\left(\sqrt{1+\dfrac{K_p^2}{K_i^2}\omega^2} \right)
+-20\log\left(\sqrt{1+T_1^2\omega^2} \right)
+-20\log\left(\sqrt{1+T_2^2\omega^2} \right)$. 
+
+$G_{\text{dB}}\left(\omega_{\SI{0}{dB}}\right) =0 \Rightarrow K_i = 0,089$ et $K_p=0,615$.
+
+
+%$20\log\left(\sqrt{1+\dfrac{K_p^2}{K_i^2}\omega^2} \right) + 20\log K_i -19,99=20\log\left(\sqrt{K_i^2+K_p^2\omega^2} \right) -19,99$.
+%On a alors 
+%$20\log\left(K_i\sqrt{1+T^2\omega^2} \right) -19,99=0 \Rightarrow K_i =\dfrac{10^{\dfrac{19,99}{20}}}{\sqrt{1+T^2\omega^2} }$
+%et $K_i = 0,76$. 
 \end{corrige}
 \else
 \fi
 
+\subsection*{Bilan}
 
 On donne les diagrammes de Bode en gain et en phase de la fonction de transfert en boucle ouverte corrigée avec le correcteur Proportionnel Intégral déterminé précédemment.
 
@@ -505,7 +520,7 @@ On donne les diagrammes de Bode en gain et en phase de la fonction de transfert 
 \includegraphics[width=.8\linewidth]{images/fig_08}
 \end{center}
 
-\subsection*{Bilan}
+
 On donne ensuite sa réponse temporelle avec et sans débit de fuite pour une pression de consigne d’eau de \SI{800}{bars}.
 
 
