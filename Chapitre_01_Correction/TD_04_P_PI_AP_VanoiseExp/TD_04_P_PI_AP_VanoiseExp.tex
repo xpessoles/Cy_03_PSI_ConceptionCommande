@@ -31,8 +31,8 @@
 \def\xxchapitre{\hspace{.12cm} Correction des SLCI}
 
 
-\def\xxtitreexo{Robot humanoïde LOLA}
-\def\xxsourceexo{\hspace{.2cm} \footnotesize{E3A -- PSI -- 20??}}
+\def\xxtitreexo{Vanoise Express}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{E3A -- PSI -- 2014}}
 
 
 \def\xxposongletx{2}
@@ -62,7 +62,7 @@
 }}
 
 \def\xxfigures{
-\includegraphics[width=.2\linewidth]{images2/fig_00}
+\includegraphics[width=.4\linewidth]{images2/fig_00}
 }%figues de la page de garde
 
 
@@ -96,9 +96,9 @@ Chapitre 1 -- \xxactivite%
 
 Noël 2003, le téléphérique Vanoise Express relie enfin les domaines skiables de La Plagne et Les Arcs, donnant naissance à paradiski, un domaine skiable de 425 km, le troisième plus grand de France.
 
-	Le Vanoise Express est une prouesse technologique de 16.5 millions €. C’est le plus grand téléphérique de ce type jamais construit au monde. Il est réalisé par la société POMAGALSKI. C’est un téléphérique sans pylônes, d’une seule portée de gare à gare, ce qui permet de diminuer l’impact sur l’environnement et de préserver la beauté du paysage. L’utilisation de cabines à deux étages permet de réduire le volume des cabines et des gares, améliorant l’esthétique de l’ensemble.
+%	Le Vanoise Express est une prouesse technologique de 16.5 millions €. C’est le plus grand téléphérique de ce type jamais construit au monde. Il est réalisé par la société POMAGALSKI. C’est un téléphérique sans pylônes, d’une seule portée de gare à gare, ce qui permet de diminuer l’impact sur l’environnement et de préserver la beauté du paysage. L’utilisation de cabines à deux étages permet de réduire le volume des cabines et des gares, améliorant l’esthétique de l’ensemble.
 	
-	La solution retenue est constituée de deux lignes parallèles portant chacune une seule cabine. Contrairement à la plupart des téléphériques, les deux lignes sont entièrement indépendantes, ce qui signifie qu’une cabine n’est pas le contrepoids de l’autre. Ainsi, en cas de problème sur une cabine, la liaison entre les deux stations n’est pas interrompue.
+%	La solution retenue est constituée de deux lignes parallèles portant chacune une seule cabine. Contrairement à la plupart des téléphériques, les deux lignes sont entièrement indépendantes, ce qui signifie qu’une cabine n’est pas le contrepoids de l’autre. Ainsi, en cas de problème sur une cabine, la liaison entre les deux stations n’est pas interrompue.
 
 
 %\end{minipage}\hfill
@@ -114,7 +114,7 @@ Dans ce qui suit, on désire respecter les critères suivants du cahier des char
 	\includegraphics[width=\linewidth]{images2/fig_01}
 \end{center}
 
-En effet, afin de respecter les consignes de vitesse pour un trajet entre «~Les Arcs~» et «~La Plagne~», il est nécessaire que l’asservissement de vitesse des moteurs à courant continu ait des qualités en précision, stabilité et rapidité.
+%En effet, afin de respecter les consignes de vitesse pour un trajet entre «~Les Arcs~» et «~La Plagne~», il est nécessaire que l’asservissement de vitesse des moteurs à courant continu ait des qualités en précision, stabilité et rapidité.
 
 
 \subsection*{Modélisation du moteur à courant continu}
@@ -156,7 +156,7 @@ Notations :
 \end{center}
 
 \subparagraph{}
-\textit{$\Omega_m(p)$ peut se mettre sous la forme :  $\Omega_m(p)=F_1(p)U(p)-F_2(p)C_r(p)$. Exprimer les fonctions $F_1(p)$ et $F_1(p)$ en fonction de $G_1(p)$, $G_2(p)$, $G_3(p)$ et $G_4(p)$.}
+\textit{$\Omega_m(p)$ peut se mettre sous la forme :  $\Omega_m(p)=F_1(p)U(p)-F_2(p)C_r(p)$. Exprimer les fonctions $F_1(p)$ et $F_2(p)$ en fonction de $G_1(p)$, $G_2(p)$, $G_3(p)$ et $G_4(p)$.}
 
 
 On donne les résultats d’une simulation réalisée sur l’ensemble de la motorisation, constituée des deux moteurs à courant continu :
@@ -167,21 +167,21 @@ On donne les résultats d’une simulation réalisée sur l’ensemble de la mot
 
 
 
-\noindent\begin{minipage}[c]{.48\linewidth}
+%\noindent\begin{minipage}[c]{.48\linewidth}
 \begin{center}
 \includegraphics[width=\linewidth]{images2/fig_06_a}
 
 \textit{Réponse en vitesse à un échelon de tension $u(t)$ d’amplitude \SI{100}{V}.}
 \end{center}
 
-\end{minipage}\hfill
-\begin{minipage}[c]{.48\linewidth}
+%\end{minipage}\hfill
+%\begin{minipage}[c]{.48\linewidth}
 \begin{center}
 \includegraphics[width=\linewidth]{images2/fig_06_b}
 
 \textit{Réponse en vitesse à un échelon de couple de perturbation $c_r(t)$ d’amplitude \SI{1000}{N.m}.}
 \end{center}
-\end{minipage}
+%\end{minipage}
 
 
 
@@ -276,7 +276,7 @@ On choisit maintenant le correcteur $C(p)=\dfrac{C_i}{p}$.
 \textit{On suppose $V_c(p)=0$. Calculez numériquement l’écart statique en régulation $\varepsilon''_s$ engendré par une perturbation échelon d’amplitude $C_{r0}=\SI{-7270}{N.m}$ qui modéliserait la descente des «~Arcs~».}
 
 \subparagraph{}
-\textit{Donnez numériquement l’écart statique total $\varepsilon_s=\varepsilon'_s+ \varepsilon''s$. Le critère «~Écart statique en vitesse en présence d’une perturbations échelon~» est-il vérifié ? Justifiez.}
+\textit{Donnez numériquement l’écart statique total $\varepsilon_s=\varepsilon'_s+ \varepsilon_s''$. Le critère «~Écart statique en vitesse en présence d’une perturbations échelon~» est-il vérifié ? Justifiez.}
 
 \vspace{.5cm}
 
@@ -322,7 +322,40 @@ Pour cette question, on pourra utiliser les propriétés de symétrie de la cour
 
 \subparagraph{}
 \textit{Ce correcteur permet-il de vérifier les critères du cahier des charges ? Justifiez.}
-
+\subsection*{Éléments de correction}
+\footnotesize{
+\begin{enumerate}
+\item $G_1(p)=\dfrac{1}{R+Lp}$, $G_2(p)=k_T$, $G_3(p)=\dfrac{1}{f+Jp}$, $G_1(p)=k_E$. 
+\item $F_1(p)=\dfrac{2G_1(p)G_2(p)G_3(p)}{1+2G_1(p)G_2(p)G_3(p)G_4(p)}$ et  
+$F_2(p)=\dfrac{G_3(p)}{1+2G_1(p)G_2(p)G_3(p)G_4(p)}$.
+\item $F_1(p)=\dfrac{0,1725}{1+0,47p}$ et $F_2(p)=\dfrac{5,8 \cdot 10^{-4}}{1+0,47p}$.
+\item $B=\SI{297,4}{N.m.V^{-1}}$, $D=5,8.10^{-4}\,\text{rad.s}^{-1}\text{Nm}$ et $T=\SI{0,47}{s}$.
+\item $E=\dfrac{D}{2}k=\SI{0,1}{m}$.
+\item $F=\dfrac{\mu}{E}=\SI{7,16}{V.s.m^{-1}}$
+\item FTBO d'ordre 1 bouclé. Le système est stable.
+\item FTBO de classe 0 $\varepsilon_S'=\dfrac{V_0}{1+C_0A'BG}=\SI{4,286}{m.s^{-1}}$.
+\item $\varepsilon_S''=\dfrac{C_{r0}G}{1+C_0A'BG}=\SI{-0,156}{m.s^{-1}}$.
+\item $\varepsilon_S''=\SI{0,160}{m.s^{-1}}$.
+\item $\varepsilon_S'=\SI{4,13}{m.s^{-1}}$, $\varepsilon_S'=\SI{4,46}{m.s^{-1}}$.
+\item $C_0$ infini
+\item $\text{FTBO}(p)=\dfrac{1,8}{p\left(1+0,47 p \right)}$
+\item $\quad$
+\item $\omega_{\SI{0}{dB}}\leq\SI{2,13}{rad.s^{-1}}$ et $C_i\leq1,67$.
+\item $\quad$
+\item FTBO de classe 1 $\varepsilon'_S=0$.
+\item Intégrateur en amont de la perturbation $\varepsilon''_S=0$.
+\item CDCF OK.
+\item $\varepsilon_v=\dfrac{1}{C_iA'BG}$
+\item Marge négative, système instable.
+\item $70\degres$ de phase à ajouter.
+\item $\quad$
+\item $a=32,16$
+\item $\omega=\dfrac{1}{\sqrt{\tau a \tau}}$
+\item $\tau = \SI{0,176}{s}$
+\item $K=0,109$
+\item $\quad$
+\item $\quad$
+\end{enumerate}}
 
 
 \end{multicols}
