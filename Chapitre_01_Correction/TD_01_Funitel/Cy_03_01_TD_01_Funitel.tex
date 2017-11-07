@@ -24,7 +24,7 @@
 \def\xxtete{Sciences Industrielles de l'Ingénieur}
 
 \def\classe{PSI$\star$ -- MP}
-\def\xxnumpartie{Cycle 04}
+\def\xxnumpartie{Cycle 03}
 \def\xxpartie{Concevoir la partie commande des systèmes asservis afin de valider leurs performances}
 
 \def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
@@ -39,7 +39,7 @@
 \def\xxposonglettext{1.45}
 \def\xxposonglety{20}
 %\def\xxonglet{Part. 1 -- Ch. 3}
-\def\xxonglet{\textsf{Cycle 04}}
+\def\xxonglet{\textsf{Cycle 03}}
 
 \def\xxactivite{TD 01}
 \def\xxauteur{\textsl{Florestan Mathurin}}
@@ -67,7 +67,7 @@
 
 
 \def\xxpied{%
-Cycle 04 -- Concevoir la partie commande des SLCI \\
+Cycle 03 -- Concevoir la partie commande des SLCI \\
 Chapitre 1 -- \xxactivite%
 }
 
@@ -108,7 +108,7 @@ On donne d’autre part les équations qui modélisent ce moteur : $u_M(t)=R i(t
 $e(t) = k_e \omega_M(t)$, 
 $C_M (t)-f\omega_M (t)-C_R (t)=J\dot{\omega}_m(t)$ et 
 $C_M (t) = k_ c i(t)$. Avec : 
-$u_M (t)$ tension d’alimentation du moteur (en V),  $i(t)$ intensité parcourant l’induit (en A), $e(t)$ force contre électromotrice (en V), $J$ inertie équivalente rapportée à l’axe moteur, $J = \SI{420}{kg.m^2}$, $f$ coefficient de frottement visqueux équivalent à l’axe moteur, $f = \SI{4,8}{N.m.s.rad^{-1}}$, $C_M (t)$ couple moteur (en N.m),  $\omega_M(t)$ vitesse de rotation du moteur (en rad/s)  $C_R (t)$ le couple résistant (en N.m), modélisant l’action combinée de la pesanteur et du vent sur le système. On considère pour cette modélisation que les efforts dus aux frottements engendrés par les mouvements du câble et des poulies sont négligés.
+$u_M (t)$ tension d’alimentation du moteur (en V),  $i(t)$ intensité parcourant l’induit (en A), $e(t)$ force contre électromotrice (en V), $J$ inertie équivalente rapportée à l’axe moteur, $J = \SI{420}{kg.m^2}$, $f$ coefficient de frottement visqueux équivalent à l’axe moteur, $f = \SI{4,8}{N.m.s.rad^{-1}}$, $C_M (t)$ couple moteur (en N.m),  $\omega_M(t)$ vitesse de rotation du moteur (en rad/s), $k_c=\SI{2,5}{NmA^{-1}}$ constante de couple, $k_e=\SI{2,5}{Vs.rad^{-1}}$ constante de force électromotrice,  $C_R (t)$ le couple résistant (en N.m), modélisant l’action combinée de la pesanteur et du vent sur le système. On considère pour cette modélisation que les efforts dus aux frottements engendrés par les mouvements du câble et des poulies sont négligés.
 
 Le schéma-blocs est donné figure suivante : 
 
@@ -131,7 +131,7 @@ On considère ici que $C(p) = K_C$ avec $K_C > $0 et on se propose de détermine
 
 \subparagraph{}\textit{ Déterminer l’expression littérale de l’erreur statique pour une entrée en échelon de valeur $V_0$. Déterminer la condition sur $K_C$ pour satisfaire le critère de précision du cahier des charges.  }
 
-\subparagraph{}\textit{En déduire la tension maximale en entrée du moteur pour une consigne de vitesse en échelon de \SI{7,2}{m.s^{-1}} lorsque $K_C$ prend la valeur minimale permettant de satisfaire les conditions déterminées précédemment. Conclure quant à la pertinence d’un 
+\subparagraph{}\textit{En déduire la tension maximale en entrée du moteur pour une consigne de vitesse en échelon de \SI{7,2}{m.s^{-1}} lorsque $K_C$ prend la valeur minimale permettant de satisfaire les conditions déterminées précédemment. Sachant que la tension nominale d'alimentation du moteur est de de \SI{300}{V}, conclure quant à la pertinence d’un 
 correcteur proportionnel. }
 
 \subsection*{Étude du comportement dynamique de l’asservissement en poursuite avec un correcteur intégral }
@@ -176,7 +176,7 @@ On souhaite bénéficier des performances du correcteur proportionnel pour sa ra
 \item $H_M(p)=\dfrac{K_M}{1+\tau_M p}$ avec $K_M=\dfrac{k_c}{k_ck_e+Rf}=\SI{0,37}{rad.V^{-1}.s^{-1}}$ et $\tau_M=\dfrac{JT}{k_ck_e+Rf}=\SI{6,32}{s}$.
 \item $G(p)=\dfrac{\dfrac{K_CK_S}{1+K_CK_S}}{1+\dfrac{\tau_M}{1+K_CK_S}p}$.
 \item $\quad$
-\item $t_{5\%}=\dfrac{\tau_M}{1+K_CK_S} \Rightarrow K_C>4,1$.
+\item $t_{5\%}=3\dfrac{\tau_M}{1+K_CK_S} \Rightarrow K_C>4,1$.
 \item $e_r=\dfrac{V_0}{1+K_CK_S} \Rightarrow K_C>75$.
 \item $U_M=\SI{23976}{V} >> \SI{300}{V}$.
 \item $K=1$, $\omega_0=\sqrt{\dfrac{K_iK_S}{\tau_M}}$, $\xi=\dfrac{1}{2}\dfrac{1}{\sqrt{K_iK_ST_M}}$.
