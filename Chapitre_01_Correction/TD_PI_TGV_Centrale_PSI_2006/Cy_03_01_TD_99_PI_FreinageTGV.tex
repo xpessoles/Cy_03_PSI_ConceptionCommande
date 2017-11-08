@@ -176,11 +176,38 @@ souhaitée.}
 \subparagraph{}\textit{En adoptant $T_i=T_{i\text{min}}$, déterminer alors le gain $K_r$ du régulateur permettant de satisfaire la pulsation de coupure et la marge de phase souhaitées.
 }
 
-IV.B.4) Le système étant bouclé par le régulateur dimensionné à la question
-IV.B.3, déterminer la marge de gain. Conclure sur les marges de stabilité obtenues.
-\subparagraph{}\textit{}
 
-\subparagraph{}\textit{}
+\subparagraph{}\textit{Le système étant bouclé par le régulateur dimensionné à la question
+précédente, déterminer la marge de gain. Conclure sur les marges de stabilité obtenues.}
+
+\subsection*{Vérification du cahier des charges vis-à-vis de la consigne de glissement}
+
+Le correcteur de la boucle de régulation du dispositif d’anti-enrayage a été déterminé
+à partir de considérations sur la réponse fréquentielle en boucle ouverte
+(pulsation de coupure à  $\SI{0}{dB}$ et marge de phase). Aussi l’objectif de cette partie
+est de vérifier que le correcteur déterminé permet de satisfaire le cahier des charges.
+Cette vérification concerne d’une part les performances vis-à-vis des variations
+de la consigne de glissement : temps du 1\ier maximum, dépassement, écart
+en régime permanent et d’autre part la réponse vis-à-vis des variations d’adhérence.
+
+Au regard de la réponse fréquentielle en boucle fermée $F(p)=\dfrac{\nu_1(p)}{\nu_c(p)}$, on décide de modéliser la transmittance correspondante par la fonction suivante : 
+$$
+F(p)=\dfrac{\nu_1(p)}{\nu_c(p)} = \dfrac{K_c\left(1+\tau_1 p\right)}{\left(1+\tau_2 p\right)^2 \left( 1+\dfrac{2\xi}{\omega_0}p + \dfrac{p^2}{\omega_0^2} \right)}.
+$$
+
+On suppose sans aucune justification que $\omega_0> \dfrac{1}{\tau_2}$. 
+
+\subparagraph{}\textit{En examinant les diagrammes de Bode fournis sur la figure suivante de la fonction de
+transfert en boucle fermée $F(p)=\dfrac{\nu_1(p)}{\nu_c(p)}$, justifier l’expression adoptée et
+compléter les diagrammes fournis par leur tracé asymptotique.}
+
+\subparagraph{}\textit{Proposer les valeurs numériques pour les différents paramètres associés à
+cette fonction de transfert.}
+
+\subparagraph{}\textit{En justifiant, montrer que l’on peut approcher la fonction de
+transfert par la forme suivante : $F(p)=\dfrac{K_f \left(1
++\tau_1 p \right)}{\left(1
++\tau_2 p \right)^2}$.}
 
 \subparagraph{}\textit{}
 
