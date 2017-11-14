@@ -210,11 +210,11 @@ La motorisation modélisée ci-dessus est insérée dans une boucle d’asservis
 \item La consigne de vitesse $v_c(t)$ est donnée en entrée. Elle est convertie en une tension $\rho_c(t)$ avec le gain $F$.
 \item Une génératrice tachymétrique de gain $\mu=\SI{0.716}{V.s/rad}$ transforme la vitesse de rotation $\omega_m(t)$ du moteur en une tension $\rho_m(t)$.
 \item Un correcteur de fonction de transfert $C(p)$ corrige la différence $\varepsilon(t)=\rho_c(t)- \rho_m(t)$ et l’envoie à un amplificateur de gain $A$, qui alimente les deux moteurs électriques.
-\item La vitesse de rotation des moteurs $\omega_m(t)$ est transformée en vitesse du téléphérique $v(t)$ avec le gain $E$.
+\item La vitesse de rotation des moteurs $\omega_m(t)$ est transformée en vitesse du téléphérique $v(t)$ avec le gain $E=\SI{0,1}{m}$ (réducteur et rayon de la poulie).
 \end{itemize}
 
-\subparagraph{}
-\textit{Déterminez l’expression du gain $E$. Faire une application numérique.}
+%\subparagraph{}
+%\textit{Déterminez l’expression du gain $E$. Faire une application numérique.}
 
 \subparagraph{}
 \textit{Déterminez l’expression du gain $F$ pour que $\varepsilon(t)=0$ entraîne $v_c(t)=v(t)$. Faire une application numérique.}
@@ -332,7 +332,7 @@ Pour cette question, on pourra utiliser les propriétés de symétrie de la cour
 $F_2(p)=\dfrac{G_3(p)}{1+2G_1(p)G_2(p)G_3(p)G_4(p)}$.
 \item $F_1(p)=\dfrac{0,1725}{1+0,47p}$ et $F_2(p)=\dfrac{5,8 \cdot 10^{-4}}{1+0,47p}$.
 \item $B=\SI{297,4}{N.m.V^{-1}}$, $D=5,8.10^{-4}\,\text{rad.s}^{-1}\text{Nm}$ et $T=\SI{0,47}{s}$.
-\item $E=\dfrac{D}{2}k=\SI{0,1}{m}$.
+%\item $E=\dfrac{D}{2}k=\SI{0,1}{m}$.
 \item $F=\dfrac{\mu}{E}=\SI{7,16}{V.s.m^{-1}}$
 \item FTBO d'ordre 1 bouclé. Le système est stable.
 \item  FTBO de classe 0 $\varepsilon_S'=\dfrac{V_0}{1+C_0A'BG}=\SI{4,286}{m.s^{-1}}$.
