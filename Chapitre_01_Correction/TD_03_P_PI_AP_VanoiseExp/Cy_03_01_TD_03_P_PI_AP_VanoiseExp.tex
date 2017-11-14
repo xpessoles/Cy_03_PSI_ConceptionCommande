@@ -130,10 +130,12 @@ Hypothèses et données :
 \item $J=\SI{800}{kg.m^2}$ moment d’inertie total des pièces en rotation, ramené sur l’axe des moteurs; 
 \item $c_m(t)=k_Ti(t)$ avec $k_T=\SI{5.67}{Nm/A}$ (constante de couple d’un moteur);
 \item $e(t)=k_E\omega_m(t)$ avec $k_T=\SI{5.77}{Vs/rad}$   (constante électrique d’un moteur)
-\item équations de la dynamique : $2c_m(t)-c_r(t)=K\omega_m(t)+f\omega_m(t)$.
+\item équations de la dynamique : $2c_m(t)-c_r(t)=J\dfrac{\text{d}\omega_m(t)}{{\text{d}}t}+f\omega_m(t)$;
+\item loi des mailles : $u(t)-e(t)=Ri(t)+L\dfrac{\text{d}i(t)}{\text{d}t}$.
+
 \end{itemize}
 
-\vspace{1.7cm}
+%\vspace{1.7cm}
 
 Notations :
 
