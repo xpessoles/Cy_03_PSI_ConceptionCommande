@@ -213,8 +213,8 @@ donne la réponse à un échelon de position de \SI{50}{mm} avec trois types de 
 \begin{multicols}{2}
 \setcounter{exo}{0}
 
-\subparagraph{}\textit{Déterminer l'expression de la fonction de transfert en boucle ouverte $H_{bo}(p)=\left(\frac{Z(p)}{\varepsilon(p)}\right)_{C_r(p)=0}$ ainsi que la fonction de transfert $H_{cr}(p)=\left(\frac{Z(p)}{C_r(p)}\right)_{Z_c=0}$
-.}
+\subparagraph{}\textit{}%sDéterminer l'expression de la fonction de transfert en boucle ouverte $H_{bo}(p)=\left(\frac{Z(p)}{\varepsilon(p)}\right)_{C_r(p)=0}$ ainsi que la fonction de transfert $H_{cr}(p)=\left(\frac{Z(p)}{C_r(p)}\right)_{Z_c=0}$
+%.}
 
 
 ${H_{bo}}(p) = \frac{{Z(p)}}{{\varepsilon (p)}} = {H_{cor}}(p)\frac{{{K_1}}}{{p(1 + {T_m}p)}} = \frac{{{K_p}{K_1}}}{{p(1 + {T_m}p)}}$
@@ -224,8 +224,8 @@ Z(p)(1 + \frac{{{K_p}{K_1}}}{{p(1 + {T_m}p)}}) =  - \frac{{{K_1}{K_2}}}{{p(1 + {
 $\Leftrightarrow 
 {H_{cr}}(p) = {\left( {\frac{{Z(p)}}{{{c_r}(p)}}} \right)_{Zc = 0}} = \frac{{ - \frac{{{K_1}{K_2}}}{{p(1 + {T_m}p)}}}}{{(1 + \frac{{{K_p}{K_1}}}{{p(1 + {T_m}p)}})}} =  - \frac{{{K_1}{K_2}}}{{p(1 + {T_m}p) + {K_p}{K_1}}} =  - \frac{{\frac{{{K_2}}}{{{K_p}}}}}{{1 + \frac{{p(1 + {T_m}p)}}{{{K_p}{K_1}}}}}$.
 
-\subparagraph{}\textit{Déterminer l'erreur statique pour une entrée de type échelon d'amplitude $Z_{c0}$ dans l'hypothèse d'une perturbation nulle ($C_{r0}$). Déterminer ensuite l'erreur due à une perturbation constante $C_{r0}$, dans le cas d'une
-consigne de position nulle ($Z_c=0$). En déduire la valeur de $K_p$ pour satisfaire le critère de précision du cahier des charges.}
+\subparagraph{}\textit{}%Déterminer l'erreur statique pour une entrée de type échelon d'amplitude $Z_{c0}$ dans l'hypothèse d'une perturbation nulle ($C_{r0}$). Déterminer ensuite l'erreur due à une perturbation constante $C_{r0}$, dans le cas d'une
+%consigne de position nulle ($Z_c=0$). En déduire la valeur de $K_p$ pour satisfaire le critère de précision du cahier des charges.}
 
 L'erreur statique par rapport  à une entrée échelon, la perturbation étant nulle, est égale à 0, car il y a une intégration dans la chaine directe
 
@@ -247,7 +247,7 @@ $\Leftrightarrow
 
 
 
-\subparagraph{}\textit{Sur le document réponse de la figure (\ref{bode_bo}) compléter les diagrammes de Bode en gain et en phase de $H_{bo}(p)$ pour $K_p$ déterminé précédemment. Indiquer si le critère de stabilité est satisfait en justifiant votre démarche par des tracés nécessaires.}
+\subparagraph{}\textit{}%Sur le document réponse compléter les diagrammes de Bode en gain et en phase de $H_{bo}(p)$ pour $K_p$ déterminé précédemment. Indiquer si le critère de stabilité est satisfait en justifiant votre démarche par des tracés nécessaires.}
 
 Avec $K_p=0,075$, on obtient une marge de phase de $35^{\circ}<60^{\circ}$, le critère de stabilité n'est donc pas vérifié.
 
@@ -255,13 +255,13 @@ Avec $K_p=0,075$, on obtient une marge de phase de $35^{\circ}<60^{\circ}$, le c
 \includegraphics[width=1.0\linewidth]{images/matlab/bode_total.pdf}
 \end{center}
 
-\subparagraph{}\textit{Tracer le diagramme de Bode de la fonction de transfert en boucle ouverte avec ce correcteur avec $K_p=1$ et $T_i = 1 s$ sur la figure \ref{bode_bo_PI}.}
+\subparagraph{}%\textit{Tracer le diagramme de Bode de la fonction de transfert en boucle ouverte avec ce correcteur avec $K_p=1$ et $T_i = 1 s$ sur la figure \ref{bode_bo_PI}.}
 
 \begin{center}
 \includegraphics[width=1.0\linewidth]{images/matlab/bode_total_pi.pdf}
 \end{center}
 
-\subparagraph{}\textit{On souhaite une marge de phase d'au moins $60^{\circ}$. Proposer un réglage de $K_p$ pour satisfaire au cahier des charges. Justifier vos calculs par les tracés nécessaires sur la figure \ref{bode_bo_PI}.}
+\subparagraph{}\textit{}%On souhaite une marge de phase d'au moins $60^{\circ}$. Proposer un réglage de $K_p$ pour satisfaire au cahier des charges. Justifier vos calculs par les tracés nécessaires sur le diagramme.}% sur la figure \ref{bode_bo_PI}.}
 
 On note qu'en la pulsation donnant une phase à $-120^{\circ}$, le gain en décibel est à peu prêt égal à $-30dB$. On règle donc $K_p$ tel que :
 
@@ -274,11 +274,11 @@ K_p=10^{-30/20}=0,032.
 On obtient alors le deuxième tracé.
 
 \begin{center}
-\includegraphics[width=1.0\linewidth]{images/matlab/bode_total3.pdf}
+\includegraphics[width=.80\linewidth]{images/matlab/bode_total3.pdf}
 \end{center} 
 
 
-\subparagraph{}\textit{La figure \ref{reponse_2nd_ordre} donne la réponse à un échelon de position de $50 mm$ avec trois types de correcteurs. Vérifier qu'elle est conforme au cahier des charges. Justifier clairement vos réponses en donnant les valeurs numériques pour chaque critère.}
+\subparagraph{}\textit{}%La figure \ref{reponse_2nd_ordre} donne la réponse à un échelon de position de $50 mm$ avec trois types de correcteurs. Vérifier qu'elle est conforme au cahier des charges. Justifier clairement vos réponses en donnant les valeurs numériques pour chaque critère.}
 
 \begin{itemize}
 \item La valeur en régime permanent vaut $50mm$ pour les trois réponses, l'erreur statique est nulle le critère de précision
@@ -304,7 +304,7 @@ donc respecté.
 \includegraphics[width=0.7\linewidth]{images/matlab/rep_temp_corrige.pdf}
 \end{center}
 
-\subparagraph{}\textit{Analyser les résultats à l'aide du diagramme de Bode de la FTBO corrigé avec un PID optimisé (figure \ref{bode_pid}.)}
+\subparagraph{}\textit{}%Analyser les résultats à l'aide du diagramme de Bode de la FTBO corrigé avec un PID optimisé (figure \ref{bode_pid}.)}
 
 On trouve une marge de phase supérieure à $60^{\circ}$ et une bande passante à $0dB$ égale à $100rad/s$ supérieure aux réglages précédents ce qui donne une réponse plus rapide et plus stable.
 
