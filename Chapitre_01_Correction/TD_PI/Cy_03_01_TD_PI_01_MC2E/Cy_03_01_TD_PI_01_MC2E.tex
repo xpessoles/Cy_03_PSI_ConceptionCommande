@@ -81,7 +81,7 @@ Fiche 1 -- \xxactivite%
 \else
 %\begin{multicols}{2}
 \fi
-
+\begin{multicols}{2}
 \section*{Mise en situation}
 \ifprof
 \else
@@ -264,8 +264,7 @@ Enfin, $H_3(p)=\dfrac{C_e(p)}{\theta_m(p)}=K_{C\theta}$.
 D'une part, $F(p)=\dfrac{H_1(p)H_2(p)H_3(p)}{1+H_1(p)H_2(p)H_3(p)} =\dfrac{\dfrac{1}{Jp}\dfrac{1}{p}K_{C\theta}}{1+\dfrac{1}{Jp}\dfrac{1}{p}K_{C\theta}} =\dfrac{K_{C\theta}}{Jp^2+K_{C\theta}}$.
 
 D'autre part, $H_{\text{BF}}(p)
-=\dfrac{\dfrac{K_{C\theta}}{Jp^2+K_{C\theta}}}{1+\dfrac{K_{C\theta}}{Jp^2+K_{C\theta}}}=\dfrac{K_{C\theta}}{Jp^2+2K_{C\theta}}
-$.
+=\dfrac{\dfrac{K_{C\theta}}{Jp^2+K_{C\theta}}}{1+\dfrac{K_{C\theta}}{Jp^2+K_{C\theta}}}=\dfrac{K_{C\theta}}{Jp^2+2K_{C\theta}}$.
 
 \end{corrige}
 \else
@@ -276,7 +275,7 @@ $.
 Conclure.}
 \ifprof
 \begin{corrige}
-Il s'agit d'un système du second ordre avec un coefficient d'amortissement nul. Le gain est de $\dfrac{1}{2}$ et la pulsation est de $\dfrac{1}{\omega_0^2}=\dfrac{J}{2K_{C\theta}} \Rightarrow \omega_0=\sqrt{\dfrac{2K_{C\theta}}{J}}$
+Il s'agit d'un système du second ordre avec un coefficient d'amortissement nul. Le gain est de $\dfrac{1}{2}$ et la pulsation est de $\dfrac{1}{\omega_0^2}=\dfrac{J}{2K_{C\theta}} \Rightarrow \omega_0=\sqrt{\dfrac{2K_{C\theta}}{J}}$.
 \end{corrige}
 \else
 \fi
@@ -304,7 +303,24 @@ $H_{\text{BO}}(p)=\dfrac{1}{\left(1+\tau p\right)^2}$.
 \textit{Donner l’expression analytique du gain $B$, en fonction de $J$ et $K_{C\theta}$, permettant d’obtenir cette
 forme de fonction de transfert. En déduire l’expression analytique de la constante de temps $\tau$.}
 \ifprof
-\begin{corrige}
+\begin{corrige}~\\
+
+D'une part, $F_1(p)=\dfrac{H_1(p)}{1+H_1(p)B}$. 
+
+D'autre part, 
+$H_{\text{BO}}(p)$
+$=\dfrac{\dfrac{H_1(p)}{1+H_1(p)B}H_2(p)H_3(p)}{1+\dfrac{H_1(p)}{1+H_1(p)B}H_2(p)H_3(p)}$ 
+%$H_{\text{BO}}(p)
+$=\dfrac{H_1(p)H_2(p)H_3(p)}{1+H_1(p)B+H_1(p)H_2(p)H_3(p)}$
+$=\dfrac{\dfrac{K_{C\theta}}{Jp^2}}{1+\dfrac{B}{Jp}+\dfrac{K_{C\theta}}{Jp^2}}$
+$=\dfrac{K_{C\theta}}{Jp^2+Bp+K_{C\theta}}$
+$=\dfrac{1}{\dfrac{J}{K_{C\theta}}p^2+\dfrac{B}{K_{C\theta}}p+1}$.
+
+Enfin, $\left(1+\tau p\right)^2 = 1+2\tau p + \tau^2p^2$. Donc nécessairement $\tau^2=\dfrac{J}{K_{C\theta}} \Rightarrow \tau=\sqrt{\dfrac{J}{K_{C\theta}}}$ et 
+$2\tau = \dfrac{B}{K_{C\theta}} \Leftrightarrow B
+=2\tau K_{C\theta}
+=2\sqrt{\dfrac{J}{K_{C\theta}}} K_{C\theta}
+=2\sqrt{JK_{C\theta}}$.
 \end{corrige}
 \else
 \fi
@@ -326,6 +342,7 @@ Afin de répondre à ces exigences, on choisit un correcteur proportionnel-inté
 \textit{Donner l’expression de l’erreur statique en réponse à un échelon d'amplitude $C_0$. Conclure vis-à-vis du cahier des charges.}
 \ifprof
 \begin{corrige}
+La boucle ouverte est de classe 1. L'erreur statique (entrée échelon) est donc nulle ce qui est conforme à l'exigence 1.2.2.1 du cahier des charges. 
 \end{corrige}
 \else
 \fi
@@ -340,7 +357,13 @@ $\dfrac{K_{\text{BF}}}{1+\dfrac{2\xi_{BF}}{\omega_{0\text{BF}}}p+\dfrac{p^2}{\om
 \subparagraph{}
 \textit{Proposer une expression simple pour la constante de temps $T_i$.}
 \ifprof
-\begin{corrige}
+\begin{corrige} ~\\
+
+Pour $\tau=T_i$, on a $\dfrac{C_e(p)}{C_C(p)}$
+$=\dfrac{\dfrac{K_i}{\tau p\left(1+\tau p \right)}}{1+\dfrac{K_i}{\tau p\left(1+\tau p \right)}}$
+$=\dfrac{K_i}{\tau p\left(1+\tau p \right)+ K_i}$
+$=\dfrac{K_i}{\tau^2 p^2+\tau p+ K_i}$
+$=\dfrac{1}{\dfrac{\tau^2}{K_i} p^2+\dfrac{\tau}{K_i} p+ 1}$.
 \end{corrige}
 \else
 \fi
@@ -350,21 +373,49 @@ $K_i=1$ et les réponses fréquentielles en boucle fermée pour différentes val
 
 
 \subparagraph{}
-\textit{En reportant les tracés nécessaires sur le document réponse et en utilisant les abaques 1 et 2 du
-document réponse, proposer un choix de réglage pour $K_i$ permettant de vérifier toutes les
-performances.}
+\textit{En s'appuyant sur les diagrammes ci-dessous, proposer un choix de réglage pour $K_i$ permettant de vérifier toutes les performances.}
 \ifprof
 \begin{corrige}
 \end{corrige}
 \else
 \fi
 
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/bo}
+%\textit{}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/bf}
+%\textit{}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/abaque}
+%\textit{}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/abaque_tr}
+%\textit{}
+\end{center}
 
 \subparagraph{}
-\textit{Remplir le tableau du document réponse et conclure sur la validation des critères de performance.
-Tracer l’allure de la réponse temporelle à un échelon $C_{c0}$ en indiquant toutes les valeurs caractéristiques
-nécessaires.}
+\textit{Remplir le tableau et conclure sur la validation des critères de performance.
+Tracer l’allure de la réponse temporelle à un échelon $C_{c0}$ en indiquant toutes les valeurs caractéristiques nécessaires.}
 
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Critère & Valeur \\ \hline
+Marges de gain &  \\ \hline
+Marges de phase &  \\ \hline
+Dépassement &  \\ \hline
+T5~\% &  \\ \hline
+Erreur statique & \\ \hline
+\end{tabular}
+\end{center}
 \ifprof
 \begin{corrige}
 
@@ -372,7 +423,9 @@ nécessaires.}
 \else
 \fi
 
+
 %%%%%%%%%%%%%%
+\end{multicols}
 \end{document}
 
 \subparagraph{}\textit{}
