@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -79,11 +79,13 @@ Fiche 1 -- \xxactivite%
 
 \ifprof
 \else
-\begin{multicols}{2}
+%\begin{multicols}{2}
 \fi
+
 \section*{Mise en situation}
 \ifprof
 \else
+\fi
 Le robot $\text{MC}^2\text{E}$ est utilisé par des chirurgiens en tant que troisième main lors de l'ablation de la vésicule biliaire. La cinématique du robot permet de garantir que le point d'insertion des outils chirurgicaux soit fixe dans le référentiel du patient. 
 
 Le robot est constitué de 3 axes de rotations permettant de mettre en position une pince. La pince est animée d'un mouvement de translation permettant de tirer la vésicule pendant que le chirurgien la détache du foie. 
@@ -95,7 +97,7 @@ Valider par un calcul simplifié de pré-dimensionnement la motorisation de l'ax
 \end{obj}
 
 
-\end{multicols}
+%\end{multicols}
 
 %%%%%%%%%%%%
 
@@ -171,9 +173,9 @@ La description par diagramme partiel de définition de blocs de l’axe en trans
 %\end{minipage}
 \end{center}
 
-\subparagraph{}
-\textit{Compléter le schéma représentant les chaînes d’énergie et d’information de cette chaîne
-fonctionnelle asservie en indiquant le nom des composants réalisant chacune des fonctions.}
+%\subparagraph{}
+%\textit{Compléter le schéma représentant les chaînes d’énergie et d’information de cette chaîne
+%fonctionnelle asservie en indiquant le nom des composants réalisant chacune des fonctions.}
 
 %
 %
@@ -244,16 +246,27 @@ Dans un premier temps, on prendra $H_{\text{cor}}(p)=1$.
 \textit{Déterminer les expressions des fonctions de transfert $H_1(p)$, $H_2(p)$ et $H_3(p)$.}
 \ifprof
 \begin{corrige}
+On a $p\theta_m(p)=\Omega_m(p)$ et donc $H_2(p)=\dfrac{\theta_m(p)}{\Omega_m(p)}=\dfrac{1}{p}$.
+
+De plus $Jp^2 \theta_m(p) = C_m(p)-C_e(p) \Leftrightarrow Jp\Omega_m(p) = \Omega_m(p)$ et donc $H_1(p)=\dfrac{\Omega_m(p)}{C_m(p)-C_e(p)}=\dfrac{1}{Jp}$.
+
+Enfin, $H_3(p)=\dfrac{C_e(p)}{\theta_m(p)}=K_{C\theta}$.
+
 \end{corrige}
 \else
 \fi
 
 \subparagraph{}
-\textit{Donner l’expression de la fonction de transfert en boucle fermée $H_{BF}(p)$ de l’asservissement
-d’effort.}
+\textit{Donner l’expression de la fonction de transfert en boucle fermée $H_{\text{BF}}(p)$ de l’asservissement d’effort.}
 
 \ifprof
 \begin{corrige}
+D'une part, $F(p)=\dfrac{H_1(p)H_2(p)H_3(p)}{1+H_1(p)H_2(p)H_3(p)} =\dfrac{\dfrac{1}{Jp}\dfrac{1}{p}K_{C\theta}}{1+\dfrac{1}{Jp}\dfrac{1}{p}K_{C\theta}} =\dfrac{K_{C\theta}}{Jp^2+K_{C\theta}}$.
+
+D'autre part, $H_{\text{BF}}(p)
+=\dfrac{\dfrac{K_{C\theta}}{Jp^2+K_{C\theta}}}{1+\dfrac{K_{C\theta}}{Jp^2+K_{C\theta}}}=\dfrac{K_{C\theta}}{Jp^2+2K_{C\theta}}
+$
+
 \end{corrige}
 \else
 \fi
