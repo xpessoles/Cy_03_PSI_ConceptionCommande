@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-%\proffalse
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -271,9 +271,40 @@ $K_i=1$ et les réponses fréquentielles en boucle fermée pour différentes val
 \fi
 
 \subparagraph{}
-\textit{En s'appuyant sur les diagrammes ci-dessous, proposer un choix de réglage pour $K_i$ permettant de vérifier toutes les performances.}
+\textit{En s'appuyant sur les diagrammes ci-dessous, proposer un choix de réglage pour $K_i$ permettant (si possible) de vérifier toutes les performances.}
 \ifprof
-\begin{corrige}
+\begin{corrige}~\\
+\begin{itemize}
+\item Marge de gain $\SI{10}{dB}$ :  la boucle ouverte est d'ordre 2. La phase est donc toujours supérieure à $-180\degres$ et la marge de gain est infinie. Le critère est respecté. 
+\item Marge de phase supérieure à 70\degres : il est donc nécessaire que le gain (dB) de la boucle ouverte soit nul lorsque la phase est égale à 120\degres. D'après la réponse fréquentielle en BO, il faut donc que $20\log K_i \leq 4 \Rightarrow K_i \leq  10^{\dfrac{4}{20}}=1,58$.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/bo_cor}
+%\textit{}
+\end{center}
+
+\begin{itemize}
+\item Dépassement inférieur à 15\% : l'abaque ci-dessous montre que pour une marge de phase de 70\degres, le dépassement sera inférieur à 15\%. Ainsi, avec une marge de phase de 70\degres, le dépassement sera donc d'environ 2\% et le coefficient d'amortissement sera d'environ 0,8. 
+\end{itemize}
+\begin{center}
+\includegraphics[width=\linewidth]{images/abaque_cor}
+%\textit{}
+\end{center}
+\begin{itemize}
+\item Temps de réponse à 5\% inférieur à 0,5 s : en utilisant la réponse fréquentielle pour un gain de 0,4 (<1,58) on a $\omega_0\simeq \SI {15}{rad.s^{-1}}$. En utilisant l'abaque du temps de réponse réduit, on a  $\omega_0 \cdot T_{r5\%}\simeq 3,5$; donc $T_{r5\%}\simeq \dfrac{3,5}{15} = \SI{0,23}{s}$. 
+
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/bf_cor}
+\includegraphics[width=\linewidth]{images/abaque_tr_cor}
+%\textit{}
+\end{center}
+
+\begin{itemize}
+\item D'après le diagramme de Bode en BF, le gain basse fréquence est nul. Le gain de la fonction de transfert est donc unitaire. L'erreur statique est donc nulle. 
+\end{itemize}
 \end{corrige}
 \else
 \fi
@@ -310,17 +341,48 @@ $K_i=1$ et les réponses fréquentielles en boucle fermée pour différentes val
 \textit{Remplir le tableau et conclure sur la validation des critères de performance.
 Tracer l’allure de la réponse temporelle à un échelon $C_{c0}$ en indiquant toutes les valeurs caractéristiques nécessaires.}
 
+\footnotesize
 \begin{center}
-\begin{tabular}{|c|c|}
+\begin{tabular}{|c|c|c|c|}
 \hline
-Critère & Valeur \\ \hline
-Marges de gain &  \\ \hline
-Marges de phase &  \\ \hline
-Dépassement &  \\ \hline
-T5~\% &  \\ \hline
-Erreur statique & \\ \hline
+Critère & Valeur & Valeur système & Écart \\ 
+ &  CDCF & réglé &  \\ \hline
+Marges de gain &  &&\\ \hline
+Marges de phase &  &&\\ \hline
+Dépassement &  &&\\ \hline
+T5~\% & && \\ \hline
+Erreur statique &&& \\ \hline
 \end{tabular}
 \end{center}
+\normalsize 
+
+\ifprof
+
+\begin{corrige}~\\
+
+\footnotesize
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Critère & Valeur & Valeur système & Écart \\ 
+ &  CDCF & réglé &  \\ \hline
+Marges de gain   & \SI{10}{dB}     &$\infty$& OK\\ \hline
+Marges de phase & 70\degres       & 70\degres &  OK\\ \hline
+Dépassement     &  $<15\,\%$     &2\% & OK \\ \hline
+T5~\%             & $<\SI{0,5}{s}$ & \SI{0,23}{s}& OK\\ \hline
+Erreur statique    & Nulle & Nulle &  OK\\ \hline
+\end{tabular}
+\end{center}
+\normalsize 
+
+Le cahier des charges est donc respecté. 
+Courbe à tracer...
+
+\end{corrige}
+\else
+\fi
+
+
 \ifprof
 \begin{corrige}
 
