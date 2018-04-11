@@ -1,8 +1,8 @@
-\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\documentclass[10pt,fleqn]{article} % Derfault font size and left-justified equations
 \usepackage[%
-    pdftitle={Résolutions de problèmes de statique : PFS 3D},
+    pdftitle={Correction des SLCI : Correcteur PI},
     pdfauthor={Xavier Pessoles}]{hyperref}
-
+    
 \input{style/new_style}
 \input{style/macros_SII}
 \usepackage{multicol}
@@ -20,26 +20,23 @@
 \courstrue
 \coursfalse
 
-% -------------------------------------
-% Déclaration des titres
-% -------------------------------------
-
 \def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
 \def\xxtete{Sciences Industrielles de l'Ingénieur}
 
+\def\classe{PSI$\star$ -- MP}
+\def\xxnumpartie{Cycle 03}
+\def\xxpartie{Concevoir la partie commande des systèmes asservis afin de valider leurs performances}
 
-\def\classe{\textsf{PSI$\star$ -- MP}}
-\def\xxnumpartie{Rév -- Stat}
-\def\xxpartie{Modéliser le comportement statique des systèmes mécaniques}
+\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Correction des SLCI}
 
-\def\xxnumchapitre{Révision 1 \vspace{.2cm}}
-\def\xxchapitre{\hspace{.12cm} Résolution des problèmes de statique -- Statique plane}
+
 
 \def\xxposongletx{2}
 \def\xxposonglettext{1.45}
 \def\xxposonglety{19}%16
 
-\def\xxonglet{\textsf{Rév -- Stat}}
+\def\xxonglet{\textsf{Cycle 03}}
 
 \def\xxactivite{TD 01}
 \def\xxauteur{\textsl{Xavier Pessoles}}
@@ -49,8 +46,18 @@
 \def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Commun Mines Ponts 2016}}
 
 \def\xxcompetences{%
+\vspace{-.3cm}
 \textsl{%
 \textbf{Savoirs et compétences :}\\
+\vspace{-.4cm}
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Res1.C4 : } Correction
+\item \textit{Res1.C4.SF1 : } Proposer la démarche de réglage d’un correcteur %proportionnel, 
+proportionnel intégral 
+%et à avance de phase
+\item \textit{Con.C2 : } 	Correction d’un système asservi	
+%\item \textit{Con.C2.SF1 : } Choisir un type de correcteur adapté
+\end{itemize}
 }}
 
 \def\xxfigures{
@@ -69,7 +76,7 @@ Fiche 1 -- \xxactivite%
 \begin{document}
 %\chapterimage{png/Fond_Cin}
 \input{style/new_pagegarde}
-\vspace{4.5cm}
+\vspace{5cm}
 \pagestyle{fancy}
 \thispagestyle{plain}
 
@@ -79,9 +86,9 @@ Fiche 1 -- \xxactivite%
 
 \ifprof
 \else
-%\begin{multicols}{2}
-\fi
 \begin{multicols}{2}
+\fi
+%\begin{multicols}{2}
 \section*{Mise en situation}
 \ifprof
 \else
@@ -225,7 +232,7 @@ Les exigences du cahier des charges sont données plus loin (exigences 1.2.2.1 �
 Afin de répondre à ces exigences, on choisit un correcteur proportionnel-intégral de gain $K_i$ et de constante de temps $T_i$. Le schéma-blocs de la régulation se met sous la forme de la figure qui suit.
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/Sujet/images/fig_08}
+\includegraphics[width=.8\linewidth]{images/Sujet/images/fig_08}
 
 \textit{Régulation avec correcteur PI.}
 \end{center}
@@ -280,7 +287,7 @@ $K_i=1$ et les réponses fréquentielles en boucle fermée pour différentes val
 \end{itemize}
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/bo_cor}
+\includegraphics[width=.5\linewidth]{images/bo_cor}
 %\textit{}
 \end{center}
 
@@ -288,7 +295,7 @@ $K_i=1$ et les réponses fréquentielles en boucle fermée pour différentes val
 \item Dépassement inférieur à 15\% : l'abaque ci-dessous montre que pour une marge de phase de 70\degres, le dépassement sera inférieur à 15\%. Ainsi, avec une marge de phase de 70\degres, le dépassement sera donc d'environ 2\% et le coefficient d'amortissement sera d'environ 0,8. 
 \end{itemize}
 \begin{center}
-\includegraphics[width=\linewidth]{images/abaque_cor}
+\includegraphics[width=.5\linewidth]{images/abaque_cor}
 %\textit{}
 \end{center}
 \begin{itemize}
@@ -297,8 +304,8 @@ $K_i=1$ et les réponses fréquentielles en boucle fermée pour différentes val
 \end{itemize}
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/bf_cor}
-\includegraphics[width=\linewidth]{images/abaque_tr_cor}
+\includegraphics[width=.45\linewidth]{images/bf_cor} \hfill
+\includegraphics[width=.45\linewidth]{images/abaque_tr_cor}
 %\textit{}
 \end{center}
 
@@ -341,6 +348,8 @@ $K_i=1$ et les réponses fréquentielles en boucle fermée pour différentes val
 \textit{Remplir le tableau et conclure sur la validation des critères de performance.
 Tracer l’allure de la réponse temporelle à un échelon $C_{c0}$ en indiquant toutes les valeurs caractéristiques nécessaires.}
 
+\ifprof
+\else
 \footnotesize
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
@@ -355,6 +364,7 @@ Erreur statique &&& \\ \hline
 \end{tabular}
 \end{center}
 \normalsize 
+\fi
 
 \ifprof
 
@@ -376,7 +386,7 @@ Erreur statique    & Nulle & Nulle &  OK\\ \hline
 \normalsize 
 
 Le cahier des charges est donc respecté. 
-Courbe à tracer...
+(Réponse indicielle d'un second ordre avec un coefficient d’amortissement de 0,8 et un gain unitaire).
 
 \end{corrige}
 \else
@@ -384,20 +394,8 @@ Courbe à tracer...
 
 
 \ifprof
-\begin{corrige}
-
-\end{corrige}
 \else
-\fi
-
-
-%%%%%%%%%%%%%%
 \end{multicols}
-
-
-\ifprof
-\else
-
 \begin{center}
 %\includegraphics[width=\linewidth]{images/Sujet/images/fig_05}
 \includegraphics[width=\linewidth]{images/mc2e}
