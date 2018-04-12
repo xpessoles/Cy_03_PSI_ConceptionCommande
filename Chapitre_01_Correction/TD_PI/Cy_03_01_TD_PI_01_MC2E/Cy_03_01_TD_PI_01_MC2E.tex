@@ -64,9 +64,10 @@ proportionnel intégral
 \includegraphics[width=.55\linewidth]{images/fig_01}
 }%figues de la page de garde
 
+
 \def\xxpied{%
-Révision statique -- Résolution des problèmes de statique plane\\
-Fiche 1 -- \xxactivite%
+Cycle 03 -- Concevoir la commande des SLCI\\% afin de valider leurs performances.\\
+Chapitre 1 -- \xxactivite%
 }
 
 \setcounter{secnumdepth}{5}
@@ -172,6 +173,8 @@ Conclure.}
 \ifprof
 \begin{corrige}
 Il s'agit d'un système du second ordre avec un coefficient d'amortissement nul. Le gain est de $\dfrac{1}{2}$ et la pulsation est de $\dfrac{1}{\omega_0^2}=\dfrac{J}{2K_{C\theta}} \Rightarrow \omega_0=\sqrt{\dfrac{2K_{C\theta}}{J}}$.
+
+Pour une entrée échelon d'ampitude $C_0$, le système répondra par un sinus d'amplitude $\dfrac{C_0}{2}$ (valeur crête à crête $C_0$) de pulsation $\omega_0$.
 \end{corrige}
 \else
 \fi
@@ -186,7 +189,7 @@ Le schéma-blocs modifié est donné figure suivante.
 
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/Sujet/images/fig_07}
+\includegraphics[width=.9\linewidth]{images/Sujet/images/fig_07}
 
 \textit{Régulation avec retour tachymétrique}
 \end{center}
@@ -232,7 +235,7 @@ Les exigences du cahier des charges sont données plus loin (exigences 1.2.2.1 �
 Afin de répondre à ces exigences, on choisit un correcteur proportionnel-intégral de gain $K_i$ et de constante de temps $T_i$. Le schéma-blocs de la régulation se met sous la forme de la figure qui suit.
 
 \begin{center}
-\includegraphics[width=.8\linewidth]{images/Sujet/images/fig_08}
+\includegraphics[width=.7\linewidth]{images/Sujet/images/fig_08}
 
 \textit{Régulation avec correcteur PI.}
 \end{center}
@@ -260,8 +263,9 @@ $\dfrac{K_{\text{BF}}}{1+\dfrac{2\xi_{BF}}{\omega_{0\text{BF}}}p+\dfrac{p^2}{\om
 \textit{Proposer une expression simple pour la constante de temps $T_i$.}
 \ifprof
 \begin{corrige} ~\\
+Pour avoir une FTBF d'ordre 2, il faut que la BO soit d'ordre 2. En conséquence, vu la forme de correcteur proposé, on peut envisager que le correcteur compense un pôle du système. 
 
-Pour $\tau=T_i$, on a $\dfrac{C_e(p)}{C_C(p)}$
+Ainsi pour $\tau=T_i$, on a $\dfrac{C_e(p)}{C_C(p)}$
 $=\dfrac{\dfrac{K_i}{\tau p\left(1+\tau p \right)}}{1+\dfrac{K_i}{\tau p\left(1+\tau p \right)}}$
 $=\dfrac{K_i}{\tau p\left(1+\tau p \right)+ K_i}$
 $=\dfrac{K_i}{\tau^2 p^2+\tau p+ K_i}$
@@ -312,6 +316,8 @@ $K_i=1$ et les réponses fréquentielles en boucle fermée pour différentes val
 \begin{itemize}
 \item D'après le diagramme de Bode en BF, le gain basse fréquence est nul. Le gain de la fonction de transfert est donc unitaire. L'erreur statique est donc nulle. 
 \end{itemize}
+
+\textbf{On propose donc $K_i=0,4 (<1,58)$.}
 \end{corrige}
 \else
 \fi
@@ -332,12 +338,12 @@ $K_i=1$ et les réponses fréquentielles en boucle fermée pour différentes val
 \end{center}
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/abaque}
+\includegraphics[width=.9\linewidth]{images/abaque}
 %\textit{}
 \end{center}
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/abaque_tr}
+\includegraphics[width=.8\linewidth]{images/abaque_tr}
 %\textit{}
 \end{center}
 
@@ -392,13 +398,30 @@ Le cahier des charges est donc respecté.
 \else
 \fi
 
+\footnotesize
+\textbf{Corrigé résumé}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $H_1(p)=\dfrac{1}{Jp}$, $H_2(p)=\dfrac{1}{p}$, $H_3(p)=K_{C\theta}$.
+\item $H_{\text{BF}}(p)=\dfrac{K_{C\theta}}{Jp^2+2K_{C\theta}}$.
+\item Sinus d'amplitude $C_0/2$ et de pulsation $\omega_0$.
+\item $\tau=\sqrt{\dfrac{J}{K_{C\theta}}}$ et $B=2\sqrt{JK_{C\theta}}$.
+\item Erreur statique nulle.
+\item $\tau=T_i$.
+\item $K_i=0,4 (<1,58)$.
+\item .
+\end{enumerate}
+\end{multicols}
+\normalsize 
+
+
 
 \ifprof
 \else
 \end{multicols}
 \begin{center}
 %\includegraphics[width=\linewidth]{images/Sujet/images/fig_05}
-\includegraphics[width=\linewidth]{images/mc2e}
+\includegraphics[width=.95\linewidth]{images/mc2e}
 %Figure 1 : Modèle de la commande en effort
 \end{center}
 \fi
