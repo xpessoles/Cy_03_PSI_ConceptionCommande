@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -156,6 +156,9 @@ $\varphi\left(\omega\right)=-135\degres \Leftrightarrow \omega = \SI{2,95}{rad.s
 \fi
 
 
+
+\ifprof
+\else
 \noindent
 \begin{tabular}{|p{.9\linewidth}|}
 \hline
@@ -168,15 +171,21 @@ $\varphi\left(\omega\right)=-135\degres \Leftrightarrow \omega = \SI{2,95}{rad.s
 \end{enumerate} \\
 \hline
 \end{tabular}
-\end{multicols}
+\fi
+
+
+%\end{multicols}
+
+
 \ifprof
 \else
 \begin{center}
 \rotatebox{90}{\includegraphics[width=.8\linewidth]{images/fig_04}}
 \end{center}
-
 \fi
-\begin{multicols}{2}
+
+
+%\begin{multicols}{2}
 
 
 \newpage
