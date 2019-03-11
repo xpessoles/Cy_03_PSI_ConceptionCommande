@@ -143,10 +143,10 @@ $k_{cfe}=\SI{10,2}{N.A^{-1}}$, $k_{vfe}=\SI{10,2}{V.s.m^{-1}}$, on note
 $K_{fe}=k_{cfe}=k_{vfe}$, $R_{fe}=\SI{7,5}{\Omega}$. 
 \end{center}
 
-Dans un premier temps, l’asservissement de vitesse n’est pas corrigé, c’est-à-dire que $H_{cor fe}(p)=1$.
+Dans un premier temps, l’asservissement de vitesse n’est pas corrigé, c’est-à-dire que $H_{\text{cor }fe}(p)=1$.
 
 
-\subparagraph{}\textit{Exprimer littéralement et sous forme canonique la fonction de transfert $H_{fe1}(p)=\dfrac{\Omega_{fe0}(p)}{\Omega_{fe0\text{ cons}}(p)}$, en fonction de $K_1$, $\tau_{gyro}$, $M_{eq}$, $K_{fe}$ et $R_{fe}$.}
+\subparagraph{}\textit{Exprimer littéralement et sous forme canonique la fonction de transfert $H_{fe1}(p)=\dfrac{\Omega_{fe0}(p)}{\Omega_{fe0\text{ cons}}(p)}$, en fonction de $K_1$, $\tau_{\text{gyro}}$, $M_{\text{eq}}$, $K_{fe}$ et $R_{fe}$.}
 
 \ifprof
 \begin{corrige}
@@ -169,26 +169,26 @@ respect des performances en rapidité et en précision.}
 \end{center}
 
 
-On propose d’utiliser un correcteur proportionnel intégral de la forme $H_{\text{cor }fe}(p)=K_{pfe}\left(1+\dfrac{1}{T_{ife}p}\right)$. La fonction de transfert en boucle ouverte de l’asservissement en vitesse de l’étage fin d’élévation devient alors 
+On propose d’utiliser un correcteur proportionnel intégral de la forme $H_{\text{cor }fe}(p)=K_{\text{\text{pfe}}}\left(1+\dfrac{1}{T_{\text{ife}}p}\right)$. La fonction de transfert en boucle ouverte de l’asservissement en vitesse de l’étage fin d’élévation devient alors 
 $
-H_{BOfe}(p)=K_{pfe}\left( 1+\dfrac{1}{T_{ife}p}\right) \dfrac{1}{1+0,75p} \dfrac{1}{1+1,6\times 10^{-3}p}
+H_{\text{BOfe}}(p)=K_{\text{pfe}}\left( 1+\dfrac{1}{T_{\text{ife}}p}\right) \dfrac{1}{1+0,75p} \dfrac{1}{1+1,6\times 10^{-3}p}
 $.
 
-La figure *** du document réponse correspond aux tracés des diagrammes de Bode réels de $H_{BOfe}(j\omega)$ 
-pour $K_{pfe}=1$ et $T_{ife}=\SI{0,1}{s}$ puis $T_{ife}=\SI{0,01}{s}$.
+La figure *** du document réponse correspond aux tracés des diagrammes de Bode réels de $H_{\text{BOfe}}(j\omega)$ 
+pour $K_{\text{pfe}}=1$ et $T_{\text{ife}}=\SI{0,1}{s}$ puis $T_{\text{ife}}=\SI{0,01}{s}$.
 
 
 \subparagraph{}\textit{Sur cette même figure, tracer le diagramme de phase asymptotique de $H_{BOfe}(j\omega)$
-(Bode) pour $T_{ife}=\SI{0,1}{s}$, en indiquant la pulsation $\dfrac{1}{T_{ife}}$.}
+(Bode) pour $T_{\text{ife}}=\SI{0,1}{s}$, en indiquant la pulsation $\dfrac{1}{T_{\text{ife}}}$.}
 \ifprof
 \begin{corrige}
 \end{corrige}
 \else
 \fi
 
-La lecture du tracé réel de la phase met en évidence un maximum à la pulsation $\omega_{\text{max}}$ telle que $\omega_{\text{max}}\in \left[\dfrac{1}{T_{ife}};600 \right]\text{rad s}^{-1}$.
+La lecture du tracé réel de la phase met en évidence un maximum à la pulsation $\omega_{\text{max}}$ telle que $\omega_{\text{max}}\in \left[\dfrac{1}{T_{\text{ife}}};600 \right]\text{rad s}^{-1}$.
 
-\subparagraph{}\textit{En supposant que le tracé réel semi-logarithmique de la phase est symétrique autour de $\omega_{\text{max}}$, calculer la valeur de $T_{ife}$ comprise dans la décade $\left[\SI{0,01}{s}; \SI{0,1}{s}\right]$ qui permet de régler ce maximum à -120\degres.}
+\subparagraph{}\textit{En supposant que le tracé réel semi-logarithmique de la phase est symétrique autour de $\omega_{\text{max}}$, calculer la valeur de $T_{\text{ife}}$ comprise dans la décade $\left[\SI{0,01}{s}; \SI{0,1}{s}\right]$ qui permet de régler ce maximum à -120\degres.}
 \ifprof
 \begin{corrige}
 \end{corrige}
