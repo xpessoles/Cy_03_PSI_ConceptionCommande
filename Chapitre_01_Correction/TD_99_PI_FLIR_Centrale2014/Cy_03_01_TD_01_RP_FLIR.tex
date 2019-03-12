@@ -201,20 +201,106 @@ La lecture du tracé réel de la phase met en évidence un maximum à la pulsati
 \else
 \fi
 
-\subparagraph{}\textit{}
+\subparagraph{}\textit{Pour le réglage de $T_{\text{ife}}$ calculé à la question précédente avec $K_{\text{pfe}}= 1$ et à partir des tracés réels du document réponse, calculer la valeur de $K_{\text{pfe}}$ qui permet de respecter le critère de marge de phase.}
 \ifprof
 \begin{corrige}
 \end{corrige}
 \else
 \fi
 
-\subparagraph{}\textit{}
+
+Le modèle est complété en utilisant les réglages déterminés aux deux questions précédentes pour $K_{\text{pfe}}$ et $T_{\text{ife}}$. Afin de
+prendre en compte les caractéristiques du moteur linéaire, une saturation d’alimentation du moteur à \SI{24}{V} est
+ajoutée ainsi qu’une modification de la commande associée qui n’est pas étudiée ici et qui ne modifie pas les
+réglages de $K_{\text{pfe}}$ et $T_{\text{ife}}$ déterminés précédemment. La réponse simulée $\omega_{fe0}(p)$ de l’étage fin d’élévation à une
+consigne de vitesse en échelon $\omega_{fe0 \text{ cons}}(t) = \SI{1}{rad.s^{-1}}$ est donnée sur la figure suivante.
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_05_a}
+%\textit{}
+\end{center}
+
+
+
+
+\subparagraph{}\textit{D’après la figure précédente, définir le temps pendant lequel la tension du moteur linéaire a été saturée et expliquer les effets de cette saturation sur les performances simulées par rapport aux performances simulées
+en gardant le modèle linéaire. Conclure sur la pertinence de la prise en compte de la saturation et sur les
+performances de l’étage fin d’élévation.}
 \ifprof
 \begin{corrige}
 \end{corrige}
 \else
 \fi
 
+\subsection*{Synthèse : validation des performances simulées du FLIR}
+\begin{obj}
+Simuler le comportement de l’axe motorisé d’élévation du FLIR et vérifier s’il respecte le cahier des
+charges.
+\end{obj}
+
+
+
+À l’instar de l’étage fin d’élévation, l’étage gros d’élévation est également asservi, mais en position angulaire. Il
+doit permettre à l’étage fin d’élévation de vérifier l’hypothèse émise précédemment, soit $\vect{u}\simeq \vect{z_e}$, c’est-à-dire que l’angle $\beta(t)$ doit rester dans l’intervalle $[-5\degres, +5\degres]$.
+Un capteur LVDT (Linear Variable Differential Transformer) permet de mesurer l’écart entre l’orientation de
+l’étage fin d’élévation et l’étage gros d’élévation $\beta(t)=\theta_{fe0}(t)-\theta_{ge0}(t)$. Le modèle d’asservissement de l’axe
+motorisé d’élévation est alors celui donné sur la figure suivante. 
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_06}
+%\textit{}
+\end{center}
+
+
+
+
+La figure suivante correspond à une mesure expérimentale du taux de rotation de la tête d’un pilote pour un mouvement
+d’élévation de sa ligne de visée. Ce signal peut alors être utilisé comme signal de consigne envoyé à l’axe motorisé
+d’élévation du FLIR.
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_07}
+%\textit{}
+\end{center}
+
+
+Pour simuler le modèle de l’axe motorisé d’élévation et comparer ses performances au cahier des charges, il est nécessaire de définir un signal de consigne  $\omega_{fe0 \text{ cons}}(t)$ composé des signaux canoniques utilisés
+en automatique.
+
+\subparagraph{}\textit{À partir de la figure précédente et en utilisant les signaux échelon et/ou rampe, proposer un modèle temporel
+associé au signal de consigne $\omega_{fe0 \text{ cons}}(t)$ exprimé en $\text{rad\, s}^{-1}$, sous la forme d’un tracé simple en fonction du temps en seconde. Tracer l’allure de $\theta_{fe0 \text{ cons}}(t)$, exprimé en rad, qui correspond à l’évolution temporelle de la ligne de visée du pilote dans ce cas. Préciser les valeurs des points caractéristiques de ces deux courbes.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{À partir des deux tracés précédents, indiquer quels critères du cahier des charges peuvent être validés en utilisant ce signal de consigne dans la simulation du comportement de l’axe motorisé d’élévation
+du FLIR.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+Après avoir dimensionné et implanté le correcteur proportionnel intégral (noté PI) au sein du modèle de l’étage
+gros d’élévation, on simule l’évolution de $\beta(t)= \theta_{fe0}(t) -\theta_{ge0}(t)$ pour le signal de consigne $\omega_{fe0 \text{ cons}}(t)$
+établi à partir de la mesure de la figure précédente. Les résultats de simulation sont donnés sur la figure B du document
+réponse****.
+
+\subparagraph{}\textit{À partir de la figure B*** :
+\begin{itemize}
+\item vérifier si l’hypothèse $\vect{u}\simeq \vect{z_e}$ reste valide ;
+\item pour chaque critère du cahier des charges à l’aide de tracés sur le document réponse***,
+conclure sur l’aptitude du FLIR à respecter les performances du cahier des charges en comparant les valeurs
+numériques mesurées sur les résultats de simulation à celles du cahier des charges.
+\end{itemize}}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
 \ifprof
 \else
 \footnotesize
