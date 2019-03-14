@@ -8,11 +8,16 @@
 \usepackage{multicol}
 \usepackage{siunitx}
 %\usepackage{picins}
+
+
+\newif\ifcolle
+\colletrue
+
 \fichetrue
 %\fichefalse
 
 \proftrue
-%\proffalse
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -159,6 +164,9 @@ $\varphi\left(\omega\right)=-135\degres \Leftrightarrow \omega = \SI{2,95}{rad.s
 
 \ifprof
 \else
+\ifcolle
+\else
+
 \noindent
 \begin{tabular}{|p{.9\linewidth}|}
 \hline
@@ -172,7 +180,7 @@ $\varphi\left(\omega\right)=-135\degres \Leftrightarrow \omega = \SI{2,95}{rad.s
 \hline
 \end{tabular}
 \fi
-
+\fi
 
 %\end{multicols}
 
@@ -188,7 +196,7 @@ $\varphi\left(\omega\right)=-135\degres \Leftrightarrow \omega = \SI{2,95}{rad.s
 %\begin{multicols}{2}
 
 
-\newpage
+%\newpage
 \subsection*{Correcteur proportionnel}
 \textit{D'après ressources P. Dupas.}
 
@@ -243,7 +251,8 @@ La marge de phase est alors de 70\degres ($\omega=\SI{0,0333}{rad/s})$.
 \else
 \fi
 
-
+\ifcolle
+\else
 \noindent
 \begin{tabular}{|p{.9\linewidth}|}
 \hline
@@ -255,7 +264,7 @@ La marge de phase est alors de 70\degres ($\omega=\SI{0,0333}{rad/s})$.
 \end{enumerate}\\
 \hline
 \end{tabular}
-
+\fi
 
 
 
@@ -321,7 +330,8 @@ $\omega = \dfrac{9\pm10,63}{2}=\SI{9,82}{rad/s}$.
 \else
 \fi
 
-
+\ifcolle
+\else
 \noindent
 \begin{tabular}{|p{.9\linewidth}|}
 \hline
@@ -332,7 +342,7 @@ $\omega = \dfrac{9\pm10,63}{2}=\SI{9,82}{rad/s}$.
 \end{enumerate}\\
 \hline
 \end{tabular}
-
+\fi
 
 %\end{multicols}
 
@@ -370,7 +380,8 @@ $\Rightarrow a=-\dfrac{\sin \left(\varphi_{\text{max}}\right)+1}{ \sin \left(\va
 
 
 \subparagraph{}\textit{Tracer le diagramme de Bode du correcteur et le diagramme de la boucle ouverte corrigée.}
-
+\ifcolle
+\else
 \noindent
 \begin{tabular}{|p{.9\linewidth}|}
 \hline
@@ -381,6 +392,9 @@ $\Rightarrow a=-\dfrac{\sin \left(\varphi_{\text{max}}\right)+1}{ \sin \left(\va
 \end{enumerate}\\
 \hline
 \end{tabular}
+
+\fi
+
 \end{multicols}
 
 \ifprof

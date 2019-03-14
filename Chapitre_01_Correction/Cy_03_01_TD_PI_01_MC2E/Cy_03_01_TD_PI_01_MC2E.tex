@@ -11,6 +11,10 @@
 \fichetrue
 %\fichefalse
 
+
+\newif\ifcolle
+\colletrue
+
 \proftrue
 \proffalse
 
@@ -398,6 +402,8 @@ Le cahier des charges est donc respecté.
 \else
 \fi
 
+\ifcolle
+\else
 \footnotesize
 \textbf{Corrigé résumé}
 \begin{multicols}{2}
@@ -413,7 +419,7 @@ Le cahier des charges est donc respecté.
 \end{enumerate}
 \end{multicols}
 \normalsize 
-
+\fi
 
 
 \ifprof

@@ -7,6 +7,10 @@
 \input{style/macros_SII}
 \usepackage{multicol}
 \usepackage{siunitx}
+
+\newif\ifcolle
+\colletrue
+
 %\usepackage{picins}
 \fichetrue
 %\fichefalse
@@ -235,6 +239,8 @@ La marge de phase est alors de 70\degres ($\omega=\SI{0,0333}{rad/s})$.
 \fi
 
 
+\ifcolle
+\else
 \noindent
 \begin{tabular}{|p{.9\linewidth}|}
 \hline
@@ -246,7 +252,7 @@ La marge de phase est alors de 70\degres ($\omega=\SI{0,0333}{rad/s})$.
 \end{enumerate}\\
 \hline
 \end{tabular}
-
+\fi
 
 
 
@@ -313,6 +319,8 @@ $\omega = \dfrac{9\pm10,63}{2}=\SI{9,82}{rad/s}$.
 \fi
 
 
+\ifcolle
+\else
 \noindent
 \begin{tabular}{|p{.9\linewidth}|}
 \hline
@@ -323,7 +331,7 @@ $\omega = \dfrac{9\pm10,63}{2}=\SI{9,82}{rad/s}$.
 \end{enumerate}\\
 \hline
 \end{tabular}
-
+\fi
 
 %\end{multicols}
 
