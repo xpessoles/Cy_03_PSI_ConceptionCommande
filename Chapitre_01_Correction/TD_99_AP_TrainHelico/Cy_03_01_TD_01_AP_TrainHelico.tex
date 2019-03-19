@@ -58,7 +58,7 @@
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
-\def\xxtitreexo{Vision en réalité augmentée pour hélicoptère \ifnormal $\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi }
+\def\xxtitreexo{Train d'aterrissage d'hélicoptère \ifnormal $\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi }
 \def\xxsourceexo{\hspace{.2cm} \footnotesize{Banque PT -- SIA 2014}}
 
 \def\xxcompetences{%
@@ -119,13 +119,13 @@ On prendra : $K_S = \SI{12e4}{N.A^{-1}}$ et $T_S = \SI{5e-3}{s}$;
 \item $H_Z(p)=\dfrac{K_Z p^2}{1+\dfrac{2\xi_Z}{\omega_Z}p+\dfrac{p^2}{\omega_Z^2}}$ la fonction de transfert traduisant le comportement dynamique du train.
 \item $C(p)$ la fonction de transfert du correcteur dont le réglage fait l'objet de cette partie.
 \end{itemize}
-$\dot{Z}_c^*(p)$  est la transformée de la consigne  $\dot{z}_c^*(t)$. On donne ci-dessous l'allure de la consigne en vitesse avec une accélération de $\SI{12}{m.s^{-2}}$ et une vitesse maximale de $\SI{4}{m.s^{-1}}$. 
-
-
-\begin{center}
-\includegraphics[width=.5\linewidth]{images/fig_02}
-%\textit{}
-\end{center}
+%$\dot{Z}_c^*(p)$  est la transformée de la consigne  $\dot{z}_c^*(t)$. On donne ci-dessous l'allure de la consigne en vitesse avec une accélération de $\SI{12}{m.s^{-2}}$ et une vitesse maximale de $\SI{4}{m.s^{-1}}$. 
+%
+%
+%\begin{center}
+%\includegraphics[width=.5\linewidth]{images/fig_02}
+%%\textit{}
+%\end{center}
 
 \subsection*{Fonction de transfert en boucle ouverte non corrigée}
 \begin{obj}
@@ -181,7 +181,7 @@ Afin de satisfaire les exigences, une étude complémentaire non abordée dans c
 \else
 \fi
 
-On choisit dans un premier temps un correcteur de la forme $C(p)=\dfrac{K_p}{p^2}$. On donne les diagrammes de Bode de la fonction de transfert en boucle ouverte du système ainsi corrigé pour $K_p =1$.
+On choisit dans un premier temps un correcteur de la forme $C(p)=\dfrac{K_p}{p^2}$. On donne les diagrammes de Bode de la fonction de transfert en boucle ouverte du système ainsi corrigé pour $K_p =1$. 
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{images/fig_04}
@@ -196,7 +196,7 @@ On choisit dans un premier temps un correcteur de la forme $C(p)=\dfrac{K_p}{p^2
 \fi
 
 On choisit finalement un correcteur de la forme $C(p)= \dfrac{K_p}{p^2}\dfrac{1+\mu Tp}{1+Tp}$ avec $\mu > 1$.
-Les caractéristiques du terme en $K_p\dfrac{1+\mu Tp}{1+Tp}$  ainsi que des abaques de calcul sont donnés ci -dessous.
+Les caractéristiques du terme en $K_p\dfrac{1+\mu Tp}{1+Tp}$  ainsi que des abaques de calcul sont donnés ci -dessous. On reprend dans un premier temps $K_p=1$. 
 
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_05}
