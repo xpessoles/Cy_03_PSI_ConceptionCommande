@@ -255,6 +255,11 @@ On choisit dans un premier temps un correcteur de la forme $C(p)=\dfrac{K_p}{p^2
 \subparagraph{}\textit{Évaluer les marges de stabilité pour ce réglage. Déterminer la valeur de $K_p$ garantissant le critère de pulsation de coupure à \SI{0}{dB}. Ce correcteur peut-il permettre de répondre aux critères de performances énoncés en début de partie ? Justifier la réponse}
 \ifprof
 \begin{corrige}
+La marge de gain est de \SI{18}{dB} et la marge de phase est de 95\degres. 
+
+Pour avoir une pulsation de coupure à \SI{0}{dB} de $\SI{6}{rad.s^{-1}}$, il faut relever le gain de \SI{20}{dB} soit $K_P=10$. Dans ces conditions, la marge de phase est de $-15\degres$ et la marge de gain est $\SI{-2}{dB}$. 
+
+En conséquences, le système est précis (écart nul) et la pulsation de coupure du cahier des charges est respectée. Les marges ne sont plus satisfaites.  
 \end{corrige}
 \else
 \fi
@@ -270,6 +275,7 @@ Les caractéristiques du terme en $K_p\dfrac{1+\mu Tp}{1+Tp}$  ainsi que des aba
 \subparagraph{}\textit{Comment se nomme l'action de correction obtenue avec ce terme ? }
 \ifprof
 \begin{corrige}
+L'action de correction obtenue est de l'avance de phase. 
 \end{corrige}
 \else
 \fi
@@ -278,6 +284,12 @@ Les caractéristiques du terme en $K_p\dfrac{1+\mu Tp}{1+Tp}$  ainsi que des aba
 \subparagraph{}\textit{Quelle valeur doit-on donner à $\mu$ pour garantir le critère de marge de phase ? }
 \ifprof
 \begin{corrige}
+\textbf{Cas 1 : on conserve $K_P=10$.}
+ Le correcteur doit ajouter 60\degres de phase pour $\omega=\SI{6}{rad.s^{-1}}$. Il faut donc $\mu=14$.
+ 
+ \textbf{Cas 2 : on reprend $K_P=1$.}
+ 
+Le critère de précision reste validé car il y a toujours les deux intégrateurs dans le correcteur. 
 \end{corrige}
 \else
 \fi
@@ -286,6 +298,14 @@ Les caractéristiques du terme en $K_p\dfrac{1+\mu Tp}{1+Tp}$  ainsi que des aba
 \subparagraph{}\textit{En déduire les valeurs de $T$ et de $K_P$ permettant d'assurer les critères de stabilité et de bande passante énoncés au début de partie. Le critère de précision est-il validé ?}
 \ifprof
 \begin{corrige}
+\textbf{Dans le cas 1 :}
+$\omega=\dfrac{1}{T\sqrt{\mu}}$ $ \Leftrightarrow T=\dfrac{1}{\omega\sqrt{\mu}}=\dfrac{1}{6\sqrt{14}}=\SI{0,045}{s}$.
+Le gain $K_P$ déjà déterminé permet de satisfaire le cahier des charges. Il faut donc que le gain du correcteur à avance de phase soit nul à la pulsation de coupure à $\omega_{\SI{0}{dB}}$.
+
+Il faut donc que $\dfrac{1}{2}\left( 20\log\left( \mu K_P'\right) + 20\log K_P'  \right)=0 $ 
+$\Rightarrow \log\left( \mu K_P'^2\right)  =0$
+$\Rightarrow  \mu K_P'^2 =1$
+$\Rightarrow   K_P' =\sqrt{1/\mu}=0,267$.
 \end{corrige}
 \else
 \fi
