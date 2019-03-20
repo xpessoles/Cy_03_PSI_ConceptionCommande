@@ -13,7 +13,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -22,12 +22,12 @@
 \coursfalse
 
 \newif\ifnormal
-\normaltrue
-%\normalfalse
+%\normaltrue
+\normalfalse
 
 \newif\ifdifficile
 \difficilefalse
-%\difficiletrue
+\difficiletrue
 
 \newif\iftdifficile
 \tdifficilefalse
@@ -58,7 +58,7 @@
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
-\def\xxtitreexo{Train d'aterrissage d'hélicoptère \ifnormal $\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi }
+\def\xxtitreexo{Train d'aterrissage d'hélicoptère \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi }
 \def\xxsourceexo{\hspace{.2cm} \footnotesize{Banque PT -- SIA 2014}}
 
 \def\xxcompetences{%
@@ -104,10 +104,60 @@ Cette partie a pour objectif de proposer un réglage pour le correcteur de la co
 
 On se propose d'étudier la stabilité vis-à-vis de la seule consigne  $\dot{Z}_c^*(p)$. On adopter pour le réglage de la correction le schéma suivant.
 
+%\begin{center}
+%\includegraphics[width=\linewidth]{images/fig_01}
+%%\textit{}
+%\end{center}
+
+
+\footnotesize
 \begin{center}
-\includegraphics[width=\linewidth]{images/fig_01}
-%\textit{}
+\begin{tikzpicture}[scale=0.85, every node/.style={scale=0.85}]
+
+\sbEntree{E}
+
+\sbComp{c1}{E}
+    \sbRelier[$\dot{Z}^*_C(p)$]{E}{c1}
+
+\sbBloc{b1}{$C(p)$}{c1}
+    \sbRelier{c1}{b1}
+
+\sbBloc{b2}{$H_S(p)$}{b1}
+    \sbRelier{b1}{b2}
+    
+\sbComp[6]{c2}{b2}
+  \sbRelier[$F_{\text{éq}}(p)$]{b2}{c2}
+
+\sbBloc{b3}{$H_Z(p)$}{c2}
+    \sbRelier{c2}{b3}
+
+\sbBloc{b4}{$\dfrac{1}{p}$}{b3}
+    \sbRelier{b3}{b4}
+%\sbBloc{b2}{$H_2(p)$}{c2}
+  %  \sbRelier{c2}{b2}
+    
+
+\sbSortie[4]{S}{b4}
+    \sbRelier{b4}{S}
+    \sbNomLien[0.8]{S}{$\dot{Z}^*(p)$}
+
+\sbDecaleNoeudy[4]{b4}{n1} 
+\sbDecaleNoeudx[-2]{n1}{n2} 
+
+\sbBlocr{r}{$\lambda_a$}{n2} 
+\sbRelieryx{b4-S}{r}
+\sbRelierxy{r}{c2}
+
+\sbDecaleNoeudx[4]{b4}{n3} 
+\sbDecaleNoeudy[-.4]{n3}{n4} 
+\sbRenvoi[6]{n4}{c1}{}
+
+%\draw [latex-] (c2) --++ (0,1) node[left] {$\text{Pert}(p)$};
+
+\end{tikzpicture}
 \end{center}
+\normalsize
+
 
 On note dans ce schéma :
 \begin{itemize}
@@ -134,7 +184,11 @@ II s'agit dans un premier temps d'analyser la forme de la fonction de transfert 
 
 \subparagraph{}\textit{Déterminer littéralement et sous forme canonique la fonction de transfert  $H_F(p)=\dfrac{\dot{Z}^*(p)}{F_{\text{éq}}(p)}$.}
 \ifprof
-\begin{corrige}
+\begin{corrige}~\\
+$H_F(p) = \dfrac{H_Z(p)\dfrac{1}{p}}{1+\lambda_a H_Z(p)\dfrac{1}{p}}= \dfrac{\dfrac{K_Z p^2}{1+\dfrac{2\xi_Z}{\omega_Z}p+\dfrac{p^2}{\omega_Z^2}}\dfrac{1}{p}}{1+\lambda_a \dfrac{K_Z p^2}{1+\dfrac{2\xi_Z}{\omega_Z}p+\dfrac{p^2}{\omega_Z^2}}\dfrac{1}{p}}$
+$= \dfrac{K_Z p^2}{p\left( 1+\dfrac{2\xi_Z}{\omega_Z}p+\dfrac{p^2}{\omega_Z^2} \right)+\lambda_a K_Z p^2}$
+
+$= \dfrac{K_Z p}{ 1+\left(\dfrac{2\xi_Z}{\omega_Z}+\lambda_a K_Z\right)p+\dfrac{p^2}{\omega_Z^2} }$.
 \end{corrige}
 \else
 \fi
@@ -142,6 +196,7 @@ II s'agit dans un premier temps d'analyser la forme de la fonction de transfert 
 \subparagraph{}\textit{Déterminer littéralement et sous forme canonique la fonction de transfert en boucle ouverte non corrigée $H_{\text{BONC}}(p)$.}
 \ifprof
 \begin{corrige}
+$H_{\text{BONC}}(p) = \dfrac{K_Z p}{ 1+\left(\dfrac{2\xi_Z}{\omega_Z}+\lambda_a K_Z\right)p+\dfrac{p^2}{\omega_Z^2} } \cdot \dfrac{K_S}{1+T_Sp} $.
 \end{corrige}
 \else
 \fi
@@ -156,6 +211,14 @@ On donne le diagramme de Bode de $H_F(p)$.
 \subparagraph{}\textit{Justifier la forme de ce diagramme en traçant les asymptotes et en indiquant comment retrouver sur le tracé les valeurs de $K_z$ et $\omega_z$. Tracer en rouge les diagrammes de la fonction $H_{\text{BONC}}(p)$. On prendra pour cela $20\log K_S \simeq \SI{100}{dB}$.}
 \ifprof
 \begin{corrige}
+$H_F$ est un second ordre dérivé de coefficient d'amortissement $\xi_{F}$ et de pulsation propore $\omega_{Z}$. Ne pouvant pas calculer $\xi_{F}$, l'allure du diagrame de Bode suggère que $\xi_{F}<1$ car il y a une seule rupture de pente à $\omega_Z= \SI{5,5}{rad.s^{-1}}$.
+
+Pour $\omega<\omega_Z$< l'asymptote du second ordre à un gain de $\SI{0}{dB}$. Seul le dérivateur est influent. En conséquence, pour $\omega =\SI{1}{rad.s^{-1}}$, on a donc $\left| K_Z p\right|_{\text{dB}}=20\log K_Z=-106$. On a donc $K_Z=5\times 10^{-6}$. 
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{images/BODE_NC.png}
+%\textit{}
+\end{center}
 \end{corrige}
 \else
 \fi
@@ -167,7 +230,7 @@ II s'agit à présent de définir la structure du correcteur et de proposer un r
 
 Afin de satisfaire les exigences, une étude complémentaire non abordée dans ce sujet montre que la boucle d'asservissement doit posséder les performances suivantes :
 \begin{itemize}
-\item erreur statique nulle
+\item erreur statique nulle;
 \item pulsation de coupure à \SI{0}{dB} et $\omega_{\SI{0}{dB}}= \SI{6}{rad.s^{-1}}$;
 \item marge de phase $M\varphi = 45\degres$;
 \item marge de gain $MG > \SI{6}{dB}$.
@@ -177,6 +240,7 @@ Afin de satisfaire les exigences, une étude complémentaire non abordée dans c
 \subparagraph{}\textit{Quelle doit être la classe minimale du correcteur afin de garantir le critère de précision ?}
 \ifprof
 \begin{corrige}
+Pour que l'erreur statique soit nulle, il faut que la classe de la FTBO soit de 1. La classe de la FTBO non corrigée étant de <<-1>>, il faut donc que le correcteur soit de classe 2 pour que le critère de précision soit garanti.
 \end{corrige}
 \else
 \fi
