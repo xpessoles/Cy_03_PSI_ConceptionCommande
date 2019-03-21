@@ -98,11 +98,40 @@ Chapitre 1 -- \xxactivite%
 
 
 \section*{Mise en situation}
+
+Lors d’atterrissages d'hélicoptères à grande, les oscillations induites par l'impact au sol du train
+d'atterrissage principal génèrent des contraintes mécaniques importantes à la liaison du pylône de queue avec
+la cabine. Les oscillations du pylône de queue de l’appareil ne sont pas négligeables.
+Lors de ces atterrissages, les vitesses verticales minimales sont de l’ordre de \SI{2}{m.s^{-1}} mais peuvent atteindre des valeurs plus importantes lors d’appontage sur un bateau à cause des mouvements du bateau dus à la houle.
+La résistance aux crashs correspond à la possibilité de garder opérationnel un appareil qui aurait atterri avec
+une vitesse d'impact pouvant atteindre 4 m/s.
+%\begin{center}
+%\includegraphics[width=.8\linewidth]{images/fig_07}
+%%%\textit{}
+%\end{center}
+
 \begin{obj}
-Cette partie a pour objectif de proposer un réglage pour le correcteur de la commande asservie définie dans la partie précédente. Il s'agira également de valider les performances globales obtenues grâce à cette commande semi-active.
+Pour une vitesse d'impact de \SI{4}{m.s^{-1}} l'accélération de la queue doit rester inférieure à \SI{3}{rad.s^{-2}}.
 \end{obj}
 
-On se propose d'étudier la stabilité vis-à-vis de la seule consigne  $\dot{Z}_c^*(p)$. On adopter pour le réglage de la correction le schéma suivant.
+\ifprof
+\else
+
+On donne une modélisation cinématique du train principal. 
+\begin{center}
+\begin{minipage}[c]{.48\linewidth}
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_07}
+%%\textit{}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[c]{.48\linewidth}
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_08}
+%%\textit{}
+\end{center}
+\end{minipage} \end{center}
+La vitesse d'impact lors de l'atterrissage de l'hélicoptère correspond alors à la vitesse de la tige 5 de l'amportisseur par rapport au cylindre 4. Cette vitesse est notée $Z^*$. On se propose d'étudier la stabilité vis-à-vis de la seule consigne  $\dot{Z}_c^*(p)$. On adoptera pour le réglage de la correction le schéma suivant.
 
 %\begin{center}
 %\includegraphics[width=\linewidth]{images/fig_01}
@@ -176,6 +205,8 @@ On prendra : $K_S = \SI{12e4}{N.A^{-1}}$ et $T_S = \SI{5e-3}{s}$;
 %\includegraphics[width=.5\linewidth]{images/fig_02}
 %%\textit{}
 %\end{center}
+\fi
+
 
 \subsection*{Fonction de transfert en boucle ouverte non corrigée}
 \begin{obj}
@@ -201,12 +232,16 @@ $H_{\text{BONC}}(p) = \dfrac{K_Z p}{ 1+\left(\dfrac{2\xi_Z}{\omega_Z}+\lambda_a 
 \else
 \fi
 
+
+\ifprof
+\else
 On donne le diagramme de Bode de $H_F(p)$.
 
 \begin{center}
-\includegraphics[width=.9\linewidth]{images/fig_03}
+\includegraphics[width=\linewidth]{images/fig_03}
 %\textit{}
 \end{center}
+\fi
 
 \subparagraph{}\textit{Justifier la forme de ce diagramme en traçant les asymptotes et en indiquant comment retrouver sur le tracé les valeurs de $K_z$ et $\omega_z$. Tracer en rouge les diagrammes de la fonction $H_{\text{BONC}}(p)$. On prendra pour cela $20\log K_S \simeq \SI{100}{dB}$.}
 \ifprof
@@ -216,7 +251,7 @@ $H_F$ est un second ordre dérivé de coefficient d'amortissement $\xi_{F}$ et d
 Pour $\omega<\omega_Z$< l'asymptote du second ordre à un gain de $\SI{0}{dB}$. Seul le dérivateur est influent. En conséquence, pour $\omega =\SI{1}{rad.s^{-1}}$, on a donc $\left| K_Z p\right|_{\text{dB}}=20\log K_Z=-106$. On a donc $K_Z=5\times 10^{-6}$. 
 
 \begin{center}
-\includegraphics[width=.9\linewidth]{images/BODE_NC.png}
+\includegraphics[width=\linewidth]{images/BODE_NC.png}
 %\textit{}
 \end{center}
 \end{corrige}
@@ -227,7 +262,8 @@ Pour $\omega<\omega_Z$< l'asymptote du second ordre à un gain de $\SI{0}{dB}$. 
 \begin{obj}
 II s'agit à présent de définir la structure du correcteur et de proposer un réglage permettant de satisfaire les critères du cahier des charges.
 \end{obj}
-
+\ifprof
+\else
 Afin de satisfaire les exigences, une étude complémentaire non abordée dans ce sujet montre que la boucle d'asservissement doit posséder les performances suivantes :
 \begin{itemize}
 \item erreur statique nulle;
@@ -235,7 +271,7 @@ Afin de satisfaire les exigences, une étude complémentaire non abordée dans c
 \item marge de phase $M\varphi = 45\degres$;
 \item marge de gain $MG > \SI{6}{dB}$.
 \end{itemize}
-
+\fi
 
 \subparagraph{}\textit{Quelle doit être la classe minimale du correcteur afin de garantir le critère de précision ?}
 \ifprof
@@ -245,12 +281,16 @@ Pour que l'erreur statique soit nulle, il faut que la classe de la FTBO soit de 
 \else
 \fi
 
+\ifprof
+\else
 On choisit dans un premier temps un correcteur de la forme $C(p)=\dfrac{K_p}{p^2}$. On donne les diagrammes de Bode de la fonction de transfert en boucle ouverte du système ainsi corrigé pour $K_p =1$. 
 
 \begin{center}
-\includegraphics[width=.9\linewidth]{images/fig_04}
+\includegraphics[width=\linewidth]{images/fig_04}
 %\textit{}
 \end{center}
+
+\fi
 
 \subparagraph{}\textit{Évaluer les marges de stabilité pour ce réglage. Déterminer la valeur de $K_p$ garantissant le critère de pulsation de coupure à \SI{0}{dB}. Ce correcteur peut-il permettre de répondre aux critères de performances énoncés en début de partie ? Justifier la réponse}
 \ifprof
@@ -264,13 +304,17 @@ En conséquences, le système est précis (écart nul) et la pulsation de coupur
 \else
 \fi
 
+\ifprof
+\else
+
 On choisit finalement un correcteur de la forme $C(p)= \dfrac{K_p}{p^2}\dfrac{1+\mu Tp}{1+Tp}$ avec $\mu > 1$.
-Les caractéristiques du terme en $K_p\dfrac{1+\mu Tp}{1+Tp}$  ainsi que des abaques de calcul sont donnés ci -dessous. On reprend dans un premier temps $K_p=1$. 
+Les caractéristiques du terme en $K_p\dfrac{1+\mu Tp}{1+Tp}$  ainsi que des abaques de calcul sont donnés ci -dessous. 
 
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_05}
 %\textit{}
 \end{center}
+\fi
 
 \subparagraph{}\textit{Comment se nomme l'action de correction obtenue avec ce terme ? }
 \ifprof
@@ -288,6 +332,7 @@ L'action de correction obtenue est de l'avance de phase.
  Le correcteur doit ajouter 60\degres de phase pour $\omega=\SI{6}{rad.s^{-1}}$. Il faut donc $\mu=14$.
  
  \textbf{Cas 2 : on reprend $K_P=1$.}
+ Dans ce cas, on souhaite que lorsque $\omega=\SI{6}{rad.s^{-1}}$, $\varphi$ soit égal à 45\degres. Il faut donc ajouter 65\degres de phase à cette pulsation. Dans ces conditions, $\mu=20$.
  
 Le critère de précision reste validé car il y a toujours les deux intégrateurs dans le correcteur. 
 \end{corrige}
@@ -306,6 +351,18 @@ Il faut donc que $\dfrac{1}{2}\left( 20\log\left( \mu K_P'\right) + 20\log K_P' 
 $\Rightarrow \log\left( \mu K_P'^2\right)  =0$
 $\Rightarrow  \mu K_P'^2 =1$
 $\Rightarrow   K_P' =\sqrt{1/\mu}=0,267$.
+
+\textbf{Dans le cas 2 :}
+$\omega=\dfrac{1}{T\sqrt{\mu}}$ $ \Leftrightarrow T=\dfrac{1}{\omega\sqrt{\mu}}=\dfrac{1}{6\sqrt{20}}=\SI{0,037}{s}$.
+
+Actuellement, le gain est de \SI{-20}{dB} pour $\omega=\SI{6}{rad.s^{-1}}$. Il faut donc augmenter le gain de \SI{20}{dB} pour la pulsation $\dfrac{1}{T\sqrt{u}}$. Ceci revient donc à résoudre 
+$20\log K_p + \dfrac{1}{2}\left( 20\log \mu K_p  - 20\log K_p \right) = 20$
+$\Rightarrow \log K_p +  \log \sqrt{\mu}= 1$
+$\Rightarrow  K_p \sqrt{\mu}= 10$
+$\Rightarrow  K_p = 10/\sqrt{20}=2,6$.
+
+\textbf{Remarque : } dans le cas 1 le gain du correcteur est $K_P\times K_P' = 2,6$. Dans le cas 2  $K_p=2,6$. 
+
 \end{corrige}
 \else
 \fi
@@ -315,23 +372,27 @@ $\Rightarrow   K_P' =\sqrt{1/\mu}=0,267$.
 \begin{obj}
 II s'agit dans cette dernière partie de vérifier les performances globales de la boucle d'asservissement.
 \end{obj}
-
+\ifprof
+\else
 On donne le résultat d'une simulation du système complet piloté à l'aide du correcteur précédemment dimensionné pour une vitesse d'impact de $\SI{4}{m.s^{-1}}$.
+\fi
 
 \subparagraph{}\textit{En analysant cette courbe, conclure quant à la validité du cahier des charges.}
 \ifprof
 \begin{corrige}
+Pour une vitesse d'impact de $\SI{4}{m.s^{-1}}$ l'accélération reste bien inférieure à $\SI{3}{rad.s^{-2}}$.
 \end{corrige}
 \else
 \fi
 
-
+\ifprof
+\else
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_06}
 %\textit{}
 \end{center}
 
-
+\fi
 
 
 
