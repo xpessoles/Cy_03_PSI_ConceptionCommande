@@ -13,7 +13,7 @@
 %\fichefalse
 
 \proftrue
-%\proffalse
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -42,8 +42,8 @@
 \def\xxpartie{Concevoir la partie commande des systèmes asservis afin de valider leurs performances}
 
 
-\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
-\def\xxchapitre{\hspace{.12cm} Correction des SLCI}
+\def\xxnumchapitre{Chapitre 1.3 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Correction des SLCI -- Correcteur à avance de phase}
 
 \def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
 \def\xxtete{Sciences Industrielles de l'Ingénieur}
@@ -54,7 +54,7 @@
 
 \def\xxonglet{\textsf{Cycle 03}}
 
-\def\xxactivite{TD 99}
+\def\xxactivite{TD 01}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
@@ -64,6 +64,10 @@
 \def\xxcompetences{%
 \textsl{%
 \textbf{Savoirs et compétences :}\\
+\begin{itemize}
+\item \textit{Con.C2} : Correction d’un système asservi.
+\item \textit{Con.C2.SF1} : Choisir un type de correcteur adapté.
+\end{itemize}
 }}
 
 \def\xxfigures{
@@ -91,25 +95,26 @@ Chapitre 1 -- \xxactivite%
 \setlength{\columnseprule}{0.4pt} 
 
 \ifprof
-%\begin{multicols}{2}
+\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
 
 
 \section*{Mise en situation}
-
+\ifprof
+\else
 Lors d’atterrissages d'hélicoptères à grande, les oscillations induites par l'impact au sol du train
 d'atterrissage principal génèrent des contraintes mécaniques importantes à la liaison du pylône de queue avec
 la cabine. Les oscillations du pylône de queue de l’appareil ne sont pas négligeables.
 Lors de ces atterrissages, les vitesses verticales minimales sont de l’ordre de \SI{2}{m.s^{-1}} mais peuvent atteindre des valeurs plus importantes lors d’appontage sur un bateau à cause des mouvements du bateau dus à la houle.
 La résistance aux crashs correspond à la possibilité de garder opérationnel un appareil qui aurait atterri avec
-une vitesse d'impact pouvant atteindre 4 m/s.
+une vitesse d'impact pouvant atteindre \SI{4}{m.s^{-1}}.
 %\begin{center}
 %\includegraphics[width=.8\linewidth]{images/fig_07}
 %%%\textit{}
 %\end{center}
-
+\fi
 \begin{obj}
 Pour une vitesse d'impact de \SI{4}{m.s^{-1}} l'accélération de la queue doit rester inférieure à \SI{3}{rad.s^{-2}}.
 \end{obj}
@@ -398,6 +403,7 @@ Pour une vitesse d'impact de $\SI{4}{m.s^{-1}}$ l'accélération reste bien inf�
 
 
 \ifprof
+\end{multicols}
 \else
 \end{multicols}
 \fi
