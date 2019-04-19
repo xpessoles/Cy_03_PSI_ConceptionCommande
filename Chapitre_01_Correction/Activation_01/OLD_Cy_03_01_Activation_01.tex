@@ -1,51 +1,88 @@
-%%%% Paramétrage du TD %%%%
-\def\xxactivite{Activtation 1 \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
-\def\xxauteur{\textsl{Xavier Pessoles}}
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation SLCI : Stabilité des systèmes},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+    
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+
+\newif\ifcolle
+\colletrue
+
+%\usepackage{picins}
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+\def\classe{PSI$\star$ -- MP}
+\def\xxnumpartie{Cycle 03}
+\def\xxpartie{Concevoir la partie commande des systèmes asservis afin de valider leurs performances}
 
 
 \def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
-\def\xxchapitre{\hspace{.12cm} Correction des systèmes}
+\def\xxchapitre{\hspace{.12cm} Stabilité des systèmes}
 
+
+\def\xxtitreexo{Activation 1}
+\def\xxsourceexo{\hspace{.2cm} }
+
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{20}
+%\def\xxonglet{Part. 1 -- Ch. 3}
+\def\xxonglet{\textsf{Cycle 03}}
+
+\def\xxactivite{Activation}
+\def\xxauteur{}%\textsl{P. Dupas.}}
 
 \def\xxcompetences{%
-\vspace{-.4cm}
 \textsl{%
-\textbf{Savoirs et compétences :}\\ \vspace{-.4cm}
+\textbf{Savoirs et compétences :}\\
 \begin{itemize}[label=\ding{112},font=\color{ocre}] 
-%\item \textit{Res1.C4 : } correction;
-\item \textit{Res1.C4.SF1 : } proposer la démarche de réglage d’un correcteur proportionnel, proportionnel intégral et à avance de phase.
-%\item \textit{Con.C2 : } 	correction d’un système asservi	;
-%\item \textit{Con.C2.SF1 : } choisir un type de correcteur adapté.
+\item \textit{Res1.C4.SF1 : } Proposer la démarche de réglage d’un correcteur proportionnel, proportionnel intégral et à avance de phase
 \end{itemize}
 }}
 
-
-
 \def\xxfigures{
-%\includegraphics[width=.7\textwidth]{image1}
+%\includegraphics[width=.9\linewidth]{images/c-evolution}
 }%figues de la page de garde
 
-\def\xxtitreexo{Réglage de correcteurs P et PI}
-\def\xxsourceexo{\hspace{.2cm} Ressources de P. Dupas.}
 
+\def\xxpied{%
+Cycle 03 -- Concevoir la commande des SLCI\\
+Chapitre 1 -- \xxactivite%
+}
 
-\iflivret
-\input{../../style/new_pagegarde}
-\else
-\input{../../style/new_pagegarde}
-\fi
-\setlength{\columnseprule}{.1pt}
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
 
+\usepackage{pgfplots}
+\begin{document}
+\def\pathfig{images}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{4.5cm}
 \pagestyle{fancy}
 \thispagestyle{plain}
-
-\vspace{4.5cm}
 
 \def\columnseprulecolor{\color{ocre}}
 \setlength{\columnseprule}{0.4pt} 
 
-%%%%%%%%%%%%%%%%%%%%%%%
-
+\def\pathfig{images}
 
 \begin{multicols}{2}
 %\subsection*{Correcteur proportionnel}
@@ -64,7 +101,7 @@
 %\ifprof
 %\begin{corrige}
 %\begin{center}
-%\includegraphics[width=.9\linewidth]{01_Bode}
+%\includegraphics[width=.9\linewidth]{images/01_Bode}
 %\end{center}
 %\end{corrige}
 %\else
@@ -92,7 +129,7 @@
 %
 %
 %\begin{center}
-%\includegraphics[width=.9\linewidth]{01_02}
+%\includegraphics[width=.9\linewidth]{images/01_02}
 %\end{center}
 %
 %\end{corrige}
@@ -115,7 +152,7 @@
 %\end{itemize}
 %
 %\begin{center}
-%\includegraphics[width=.9\linewidth]{01_03}
+%\includegraphics[width=.9\linewidth]{images/01_03}
 %\end{center}
 %
 %\end{corrige}
@@ -139,7 +176,7 @@
 %\ifprof
 %\else
 %\begin{center}
-%\rotatebox{90}{\includegraphics[width=.8\linewidth]{fig_04}}
+%\rotatebox{90}{\includegraphics[width=.8\linewidth]{images/fig_04}}
 %\end{center}
 %
 %\fi
@@ -156,7 +193,7 @@ Soit un système de fonction de transfert $G(p)=\dfrac{10}{p\left(1+p+p^2\right)
 
 On donne le diagramme de Bode associé à cette fonction de transfert. 
 \begin{center}
-\includegraphics[width=\linewidth]{exo_01_bode}
+\includegraphics[width=\linewidth]{images/exo_01_bode}
 \end{center}
 
 
@@ -204,8 +241,6 @@ La marge de phase est alors de 70\degres ($\omega=\SI{0,0333}{rad/s})$.
 
 \ifcolle
 \else
-\ifprof 
-\else
 \noindent
 \begin{tabular}{|p{.9\linewidth}|}
 \hline
@@ -218,7 +253,9 @@ La marge de phase est alors de 70\degres ($\omega=\SI{0,0333}{rad/s})$.
 \hline
 \end{tabular}
 \fi
-\fi
+
+
+
 
 %\subsection*{Correcteur proportionnel} % TETE DE LECTURE
 %Soit un système de fonction de transfert $G(p)=\dfrac{1}{\left(1+0,05p\right)\left(1+p+2p^2\right)}$. On souhaite corriger le comportement de ce système par un correcteur proportionnel.
@@ -239,7 +276,7 @@ On souhaite disposer d'une marge de phase de 45\degres en utilisant un correcteu
 \ifprof
 \begin{corrige}
 \begin{center}
-\includegraphics[width=\linewidth]{PI_BodeNC}
+\includegraphics[width=\linewidth]{images/PI_BodeNC}
 \end{center}
 \end{corrige}
 \else
@@ -274,8 +311,8 @@ $\omega = \dfrac{9\pm10,63}{2}=\SI{9,82}{rad/s}$.
 \ifprof
 \begin{corrige}~\\
 \begin{center}
-\includegraphics[width=\linewidth]{PI_corrige.png}
-\includegraphics[width=\linewidth]{PI_BodeC.png}
+\includegraphics[width=\linewidth]{images/PI_corrige.png}
+\includegraphics[width=\linewidth]{images/PI_BodeC.png}
 \end{center}
 \end{corrige}
 \else
@@ -283,8 +320,6 @@ $\omega = \dfrac{9\pm10,63}{2}=\SI{9,82}{rad/s}$.
 
 
 \ifcolle
-\else
-\ifprof
 \else
 \noindent
 \begin{tabular}{|p{.9\linewidth}|}
@@ -296,7 +331,6 @@ $\omega = \dfrac{9\pm10,63}{2}=\SI{9,82}{rad/s}$.
 \end{enumerate}\\
 \hline
 \end{tabular}
-\fi
 \fi
 
 %\end{multicols}
@@ -350,9 +384,9 @@ $\omega = \dfrac{9\pm10,63}{2}=\SI{9,82}{rad/s}$.
 %
 %\ifprof
 %\begin{center}
-%\includegraphics[width=.8\linewidth]{AP_BodeC.png}
+%\includegraphics[width=.8\linewidth]{images/AP_BodeC.png}
 %
-%\includegraphics[width=.8\linewidth]{AP_corrige.png}
+%\includegraphics[width=.8\linewidth]{images/AP_corrige.png}
 %\end{center}
 %
 %\fi
@@ -360,12 +394,12 @@ $\omega = \dfrac{9\pm10,63}{2}=\SI{9,82}{rad/s}$.
 %\ifprof
 %\else
 %\begin{center}
-%\rotatebox{90}{\includegraphics[width=.8\linewidth]{fig_04}}
+%\rotatebox{90}{\includegraphics[width=.8\linewidth]{images/fig_04}}
 %
-%\rotatebox{90}{\includegraphics[width=.8\linewidth]{fig_04}}
+%\rotatebox{90}{\includegraphics[width=.8\linewidth]{images/fig_04}}
 %\end{center}
 %
 %\fi
 
 
-%\end{document}
+\end{document}
