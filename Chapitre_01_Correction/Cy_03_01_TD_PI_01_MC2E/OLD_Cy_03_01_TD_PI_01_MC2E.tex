@@ -1,11 +1,53 @@
-%%%% Paramétrage du TD %%%%
-\def\xxactivite{TD 1 \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\documentclass[10pt,fleqn]{article} % Derfault font size and left-justified equations
+\usepackage[%
+    pdftitle={Correction des SLCI : Correcteur PI},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+    
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+%\usepackage{picins}
+\fichetrue
+%\fichefalse
+
+
+\newif\ifcolle
+\colletrue
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+\def\classe{PSI$\star$ -- MP}
+\def\xxnumpartie{Cycle 03}
+\def\xxpartie{Concevoir la partie commande des systèmes asservis afin de valider leurs performances}
+
+\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Correction des SLCI}
+
+
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{19}%16
+
+\def\xxonglet{\textsf{Cycle 03}}
+
+\def\xxactivite{TD 01}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
-\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
-\def\xxchapitre{\hspace{.12cm} Correction des systèmes}
-
+\def\xxtitreexo{Micromanipulateur compact pour la chirurgie endoscopique ($\text{MC}^2\text{E}$)}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Commun Mines Ponts 2016}}
 
 \def\xxcompetences{%
 \vspace{-.3cm}
@@ -26,34 +68,26 @@ proportionnel intégral
 \includegraphics[width=.55\linewidth]{images/fig_01}
 }%figues de la page de garde
 
-\def\xxtitreexo{Micromanipulateur compact pour la chirurgie endoscopique ($\text{MC}^2\text{E}$)}
-\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Commun Mines Ponts 2016}}
+
+\def\xxpied{%
+Cycle 03 -- Concevoir la commande des SLCI\\% afin de valider leurs performances.\\
+Chapitre 1 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
 
 
-\iflivret
-\input{../../style/new_pagegarde}
-\else
-\input{../../style/new_pagegarde}
-\fi
-\setlength{\columnseprule}{.1pt}
-
+\begin{document}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{5cm}
 \pagestyle{fancy}
 \thispagestyle{plain}
 
-\vspace{4.5cm}
 
 \def\columnseprulecolor{\color{ocre}}
 \setlength{\columnseprule}{0.4pt} 
-
-%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
-
-
 
 \ifprof
 \else
@@ -398,12 +432,12 @@ Le cahier des charges est donc respecté.
 \end{center}
 \fi
 
-%\end{document}
-%
-%\subparagraph{}\textit{}
-%
-%\begin{center}
-%\includegraphics[width=\linewidth]{images/img_04}
-%%\textit{}
-%\end{center}
+\end{document}
+
+\subparagraph{}\textit{}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/img_04}
+%\textit{}
+\end{center}
 
