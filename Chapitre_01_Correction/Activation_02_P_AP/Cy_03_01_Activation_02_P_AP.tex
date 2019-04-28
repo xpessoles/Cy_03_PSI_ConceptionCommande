@@ -131,8 +131,10 @@
 %\setlength{\columnseprule}{0.4pt} 
 %
 %\def\pathfig{images}
-
+\ifprof
+\else
 \begin{multicols}{2}
+\fi
 \subsection*{Correcteur proportionnel}
 Soit un système de fonction de transfert $G(p)=\dfrac{1}{\left(1+10p\right)\left(1+0,1p\right)\left(1+0,2p\right)}$ placé dans une boucle à retour unitaire.
 
@@ -288,7 +290,10 @@ $\Rightarrow a=-\dfrac{\sin \left(\varphi_{\text{max}}\right)+1}{ \sin \left(\va
 
 \fi
 
+\ifprof
+\else
 \end{multicols}
+\fi
 
 \ifprof
 \begin{center}

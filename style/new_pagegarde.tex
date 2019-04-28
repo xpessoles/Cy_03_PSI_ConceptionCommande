@@ -158,8 +158,35 @@
 %\end{minipage}  };
 %\end{tikzpicture}
 
-% Bandeau titre exo
+% BANDEAU EXO
+\iflivret % SI LIVRET
+\begin{tikzpicture}[remember picture,overlay]
+\draw[anchor=west] (-2cm,-3.3cm) node {\huge\sffamily\bfseries\color{black} %
+\begin{minipage}{5cm}
+\begin{center}
+\LARGE\sffamily\color{ocre}\textbf{\textsc{\xxactivite}}
 
+\begin{center}
+\xxfigures
+\end{center}
+
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[c]{12cm}
+\begin{titrechapitre}
+\renewcommand{\baselinestretch}{1.1} 
+\large\sffamily\textbf{\textsc{\xxtitreexo}}
+
+\small\sffamily{\textbf{\textit{\color{black!70}\xxsourceexo}}}
+\vspace{.5cm}
+
+\renewcommand{\baselinestretch}{1} 
+\normalsize\normalfont
+\xxcompetences
+\end{titrechapitre}
+\end{minipage}};
+\end{tikzpicture}
+\else % ELSE LIVRET
 \begin{tikzpicture}[remember picture,overlay]
 \draw[anchor=west] (-2cm,-4.3cm) node {\huge\sffamily\bfseries\color{black} %
 \begin{minipage}{5cm}
@@ -184,10 +211,12 @@
 \normalsize\normalfont
 \xxcompetences
 \end{titrechapitre}
-\end{minipage}  };
+\end{minipage}};
 \end{tikzpicture}
 
-\else
+\fi
+
+\else   % FIN IF TD
 \fi
 
 
