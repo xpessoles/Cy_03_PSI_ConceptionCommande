@@ -6,52 +6,92 @@
 \input{../../style/new_style}
 \input{../../style/macros_SII}
 \input{../../style/Cycle_03_Entete}
+\usepackage{caption}
 
+\usepackage{tikz}
+\usepackage{schemabloc}
+%\usepackage{rpcinematik}
+\usepackage{bodegraph}
+\usetikzlibrary{calc}
+\RequirePackage{pgf}
+\RequirePackage{pgfplots}
+\usetikzlibrary{babel}
 
 \livrettrue
 
+\newif\ifeleve
+\elevetrue
+
 \begin{document}
+\ifeleve
 % Cours
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/Cours/images/}}
 \input{../../Chapitre_01_Correction/Cours/Cy_03_Ch_01_Correction_Cours.tex}
+\else
+\fi
 
 % Activation
 % Sujet
+\ifeleve
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/Activation_01_P_PI/images/}}
 \input{../../Chapitre_01_Correction/Activation_01_P_PI/Cy_03_01_Activation_01_P_PI.tex}
-
+\else
 % Corrigé
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/Activation_01_P_PI/images/}}
 \input{../../Chapitre_01_Correction/Activation_01_P_PI/Cy_03_01_Activation_01_P_PI.tex}
-
+\fi
 
 % Activation 2
 % Sujet
+\ifeleve
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/Activation_02_P_AP/images/}}
 \input{../../Chapitre_01_Correction/Activation_02_P_AP/Cy_03_01_Activation_02_P_AP.tex}
-
+\else
 % Corrigé
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/Activation_02_P_AP/images/}}
 \input{../../Chapitre_01_Correction/Activation_02_P_AP/Cy_03_01_Activation_02_P_AP.tex}
+\fi
 
 
-
-%% TD Correcteur PI 1 Robot MC2E Python
-\newcommand{\td}{Cy_03_01_TD_PI_01_MC2E}
+%% TD Correcteur P Canne robotisée
+\newcommand{\td}{Cy_03_01_TD_P_01_CanneRobotisee}
 %% Sujet Normal
+%\ifeleve
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
+
+%%\else
+%%% Sujet Corrigé
+%\newpage
+%\fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
+%\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
+%\input{../../Chapitre_01_Correction/\td/\td.tex}
+%%\fi
+
+
+
+
+%% TD Correcteur PI 1 Robot MC2E Python
+\renewcommand{\td}{Cy_03_01_TD_PI_01_MC2E}
+%% Sujet Normal
+\ifeleve
+\newpage
+\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
+\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
+\input{../../Chapitre_01_Correction/\td/\td.tex}
+
+\else
 %% Sujet colle
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
@@ -63,16 +103,19 @@
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
+\fi
 
 
 %% TD Correcteur PI 2 Agitateur médical
 \renewcommand{\td}{Cy_03_01_TD_PI_02_Agitateur}
 %% Sujet Normal
+\ifeleve
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
+\else
 %% Sujet colle
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
@@ -84,16 +127,19 @@
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
+\fi
 
 
 %% TD Correcteur PI 3 Sys reeduc CCP 2013
 \renewcommand{\td}{Cy_03_01_TD_PI_03_SysReeduc}
 %% Sujet Normal
+\ifeleve
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
+\else
 %% Sujet colle
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
@@ -105,15 +151,18 @@
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
+\fi
 
 %% TD Correcteur PI 4 Sys reeduc CCP 2013
 \renewcommand{\td}{Cy_03_01_TD_PI_04_GroupeHydrau}
 %% Sujet Normal
+\ifeleve
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
+\else
 %%% Sujet colle
 %\newpage
 %\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
@@ -125,23 +174,30 @@
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
+\fi
 
 %% TD Correcteur PI 5 Chronométrie
 \renewcommand{\td}{Cy_03_01_TD_PI_05_Chronometrie}
 %% Sujet Normal
+\ifeleve
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
+\else
+\fi
+
 %% TD Avance de phase 1 Train avant hélico
 \renewcommand{\td}{Cy_03_01_TD_AP_01_TrainHelico}
 %% Sujet Difficile par défaut
+\ifeleve
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normalfalse \difficiletrue \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
+\else
 %% Sujet colle
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normalfalse \difficiletrue \tdifficilefalse \colletrue
@@ -154,15 +210,18 @@
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
-
+\fi
 
 %% TD Retard de phase 1 Quille de bateau Mines Ponts Normal
 \renewcommand{\td}{Cy_03_01_TD_RP_01_Quille}
 %% Sujet Normal par défaut
+\ifeleve
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
+
+\else
 
 %% Sujet colle (TO DO)
 \newpage
@@ -175,6 +234,7 @@
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
+\fi
 
 %% Application
 %% Sujet
