@@ -20,7 +20,7 @@
 \livrettrue
 
 \newif\ifeleve
-\elevetrue
+\elevefalse
 
 \begin{document}
 \ifeleve
@@ -91,12 +91,12 @@
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
-\else
 %% Sujet colle
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
+\else
 
 %% Sujet Corrigé
 \newpage
@@ -115,12 +115,14 @@
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
-\else
 %% Sujet colle
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
+
+
+\else
 
 %% Sujet Corrigé
 \newpage
@@ -139,13 +141,14 @@
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
-\else
 %% Sujet colle
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
+
+\else
 %% Sujet Corrigé
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
@@ -197,12 +200,13 @@
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
-\else
 %% Sujet colle
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normalfalse \difficiletrue \tdifficilefalse \colletrue
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
+
+\else
 
 %% Sujet Corrigé
 \newpage
@@ -221,7 +225,6 @@
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
-\else
 
 %% Sujet colle (TO DO)
 \newpage
@@ -229,6 +232,7 @@
 \graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
+\else
 %% Sujet Corrigé
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
