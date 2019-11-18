@@ -247,8 +247,11 @@ Le correcteur proportionnel intégral :
 \item On cherche $K$ tel que $G_{\text{dB}}\left(\omega_{\SI{0}{dB}}\right)=0$
 \item La mise en place de l'effet intégral ne doit pas modifier la position de la pulsation de coupure réglée précédemment. Pour cela, il faut donc que $\dfrac{1}{T_i}<< \omega_{\SI{0}{dB}}$. Usuellement on positionne l'action intégrale une décade avant la pulsation réglée. On a donc $T_i=\dfrac{10}{\omega_{\SI{0}{dB}}}$.
 \end{itemize}
-
 \end{methode}
+\vspace{-.8cm}
+\begin{rem}
+Une autre possibilité pour régler $T_i$ est de réaliser \textbf{une compensation de pôle}. Admettons que la FTBO puisse se mettre sous la forme $(1+\tau_1 p)(1+\tau_2 p)$ avec $\tau_1>>\tau_2$. $\tau_1$ ayant pour effet de diminuer la rapidité du système, on pourra prendre $T_i=\tau_1$ afin de supprimer l'effet du pôle associé à $\tau_1$.
+\end{rem}
 \newpage
 
 \section{Le correcteur à avance de phase}
