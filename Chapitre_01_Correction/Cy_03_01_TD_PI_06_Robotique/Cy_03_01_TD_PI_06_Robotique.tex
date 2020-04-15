@@ -54,9 +54,29 @@ proportionnel intégral
 %\section*{}
 
 \subsection*{Présentation}
+On s'intéresse à la conception de la loi de commande d'un des moteurs d'une orthèse d'épaule permettant d'améliorer le rétablissement de patients en cours de rééducation. 
+
+\begin{obj}
+\begin{itemize}
+\item Temps de réponse à 5\% pour un échelon de consigne de couple : $t\leq 2\;ms$.
+\item Erreur statique pour un couple de référence constant $C_{\text{ref 0}}$ : $|\varepsilon_0 \leq 0,05 C_{\text{ref 0}}$.
+\item Couple maximal fourni sur l’axe de l’articulation $C_{\text{max}} = \SI{50}{N}{m}$.
+\end{itemize}
+\end{obj}
+
+En pratique, le couple délivré par le moteur ne peut être mesuré directement, c’est pourquoi la grandeur
+asservie est le courant moteur. L’objet, dans cette phase de l’étude, est alors de déterminer une loi de
+commande pour la boucle d’asservissement et de valider les performances vis-à-vis du cahier des charges
+partiel.
+
+On donne partiellement le schéma-blocs de la commande. 
+
+\begin{center}
+\includegraphics[width=1.0\linewidth]{fig_02}
+\end{center}
 
 Le correcteur choisi est de type proportionnel-intégral (P.I.) de fonction de transfert : $C(p)=K\left(1+\dfrac{1}{T_ip}\right)$. On adopte sans aucune justification que $T_i=\SI{0,3}{ms}$. 
-Le diagramme de Bode de la fonction de transfert en boucle ouverte non corrigée : 
+Le diagramme de Bode de la fonction de transfert en boucle ouverte non corrigée 
 \footnotesize
 $$
 H(p)=\dfrac{
@@ -66,7 +86,7 @@ H(p)=\dfrac{
 \left( 1+\dfrac{2\times 0,09}{464}p+\dfrac{p^2}{464^2}\right)
 \left(1+\dfrac{p}{10^3} \right)
 \left(1+\dfrac{p}{10^4} \right)
-}.
+}
 $$
 \normalsize
 est donné en fin de document. $i_{\text{mes}}(t)$ est la mesure du courant du moteur et $u(t)$ la tension d’alimentation. Ce tracé pourra être utilisé sans aucune justification.
@@ -90,7 +110,7 @@ est donné en fin de document. $i_{\text{mes}}(t)$ est la mesure du courant du m
 
 \subparagraph{}\textit{En déduire les tracés asymptotiques et les allures des tracés réels du diagramme de Bode de la fonction de transfert en boucle ouverte corrigée (on différenciera les tracés par des
 couleurs différentes). Déterminer, sans calcul supplémentaire, la pulsation $\omega_1$ telle que la phase de la fonction
-de transfert en boucle ouverte est égale à -135\degres et la valeur numérique du gain statique.
+de transfert en boucle ouverte est égale à \SI{-135}{\degres} et la valeur numérique du gain statique.
 }
 \ifprof
 \begin{corrige}
