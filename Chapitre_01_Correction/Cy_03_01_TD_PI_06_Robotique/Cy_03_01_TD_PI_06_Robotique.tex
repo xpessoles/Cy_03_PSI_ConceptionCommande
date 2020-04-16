@@ -58,9 +58,9 @@ On s'intéresse à la conception de la loi de commande d'un des moteurs d'une or
 
 \begin{obj}
 \begin{itemize}
-\item Temps de réponse à 5\% pour un échelon de consigne de couple : $t\leq 2\;ms$.
-\item Erreur statique pour un couple de référence constant $C_{\text{ref 0}}$ : $|\varepsilon_0 \leq 0,05 C_{\text{ref 0}}$.
-\item Couple maximal fourni sur l’axe de l’articulation $C_{\text{max}} = \SI{50}{N}{m}$.
+\item Temps de réponse à 5\% pour un échelon de consigne de couple : $t\leq \SI{2}{ms}$.
+\item Erreur statique pour un couple de référence constant $C_{\text{ref 0}}$ : $|\varepsilon_0 |\leq 0,05 C_{\text{ref 0}}$.
+\item Couple maximal fourni sur l’axe de l’articulation $C_{\text{max}} = \SI{50}{Nm}$.
 \end{itemize}
 \end{obj}
 
@@ -146,11 +146,16 @@ boucle fermée.}
 \else
 \fi
 
-La figure 11 représente la structure de l’actionneur (la boucle de courant du moteur étant fermée) : $i_c$ et $i$
+La figure suivante représente la structure de l’actionneur (la boucle de courant du moteur étant fermée) : $i_c$ et $i$
 sont respectivement la consigne et le courant moteur, $C_{\text{ref}}$ est le couple de référence souhaité, $C_a$ est le couple
 appliqué par l’actionneur sur l’axe de l’articulation et $G_{ic}$ est un gain pur correspondant à la relation entre le
 courant et le couple $C_a$. On suppose pour toute cette question que le couple de référence $C_{\text{ref}} (t)$ est constant
 d’amplitude $C_{\text{ref}} = C_{\text{ref0}}$.
+
+
+\begin{center}
+\includegraphics[width=1.0\linewidth]{fig_03}
+\end{center}
 
 \subparagraph{}\textit{Exprimer $G_{ic}$ en fonction de $K_c$ et de $N$.
 }
@@ -180,13 +185,15 @@ entre le couple de référence et le couple moteur exprimé sur l’axe de l’a
 \fi
 
 
-\subparagraph{}\textit{Vérifier alors si les différentes exigences1 du cahier des charges de l’actionneur sont validées.
+\subparagraph{}\textit{Vérifier alors si les différentes exigences du cahier des charges de l’actionneur sont validées.
 }
 \ifprof
 \begin{corrige}
 \end{corrige}
 \else
 \fi
+
+On admettra sans aucune justification que la pulsation de coupure à $\SI{0}{dB}$ et le temps de réponse sont liés par la relation approximative $\omega_cTr \simeq 3$.
 
 \end{multicols}
 
