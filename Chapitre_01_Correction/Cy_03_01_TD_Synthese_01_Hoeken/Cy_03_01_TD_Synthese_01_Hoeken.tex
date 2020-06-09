@@ -183,6 +183,10 @@ de la perturbation $x_e^*$ (en \%) sur l’intervalle $[\SI{1,25}{rad.s^{-1}};\S
 Conclure sur la validation de l’exigence de « précision ».}
 \ifprof
 \begin{corrige}
+En \SI{1,25}{rad.s^{-1}} l'atténuation est de $\SI{-55}{dB}$. On a $20\log K = -55$ soit $K=0,002$ (inférieur à 1\%). 
+En \SI{12,5}{rad.s^{-1}} l'atténuation est de $\SI{-30}{dB}$. On a $20\log K = -30$ soit $K=0,03$ (supérieur à 1\%). 
+
+Le critère d'atténuation n'est pas vérifié sur l'ensemble de l'intervalle.
 \end{corrige}
 \else
 \fi
@@ -225,6 +229,35 @@ Justifier votre réponse. En déduire la valeur limite de $T$ permettant de sati
 «~rapidité~».}
 \ifprof
 \begin{corrige}
+%On a $Q(p)=0$. On note $\varepsilon_1(p)$ la sortie du premier comparateur et $\varepsilon_2(p)$ la sortie du comparateur de la chaîne de retour.
+%
+%$X_v(p)=\varepsilon_1(p)\dfrac{1}{H(p)}F(p) H(p)=\varepsilon_1(p)F(p)$,
+%
+%$\varepsilon_1(p)= X_m(p)-\varepsilon_2(p)$,
+%
+%$\varepsilon_2(p)= X_v(p)-\varepsilon_1(p)\dfrac{1}{H(p)}F(p) H(p)=X_v(p)-\varepsilon_1(p)F(p)$.
+%
+%Des deux précédentes équations, il vient $\varepsilon_1(p)= X_m(p)-X_v(p)+\varepsilon_1(p)F(p)$ 
+%$\Leftrightarrow \varepsilon_1(p)\left( 1-F(p)\right)=X_m(p)-X_v(p)$ 
+%$\Leftrightarrow \varepsilon_1(p) =\dfrac{X_m(p)-X_v(p)}{ 1-F(p)}$.
+%
+%On a donc 
+%$X_v(p)=\dfrac{X_m(p)-X_v(p)}{ 1-F(p)}F(p)$
+%
+%$\Leftrightarrow X_v(p)\left(1+ \dfrac{F(p)}{ 1-F(p)}\right)=\dfrac{X_m(p)}{ 1-F(p)}$
+%$\Leftrightarrow X_v(p)\dfrac{1}{ 1-F(p)}=\dfrac{X_m(p)}{ 1-F(p)}$ et $X_m(p)=X_v(p)$.
+
+En utilisant la formulation proposée, on a $X_v(p) = A(p)X_m(p)  =\dfrac{X_m(p) }{\left(1+Tp\right)^2} $.
+
+Pour améliorer le temps de réponse du système, il faut diminuer $T$. 
+
+\textbf{Justification}
+On a $G(p)=\dfrac{1}{1+T^2p^2 +2Tp}$. On a donc $\dfrac{1}{\omega_0^2}=T^2$ et $\dfrac{2\xi}{\omega_0}=2T$. On a donc $\omega_0=\dfrac{1}{T}$ et $\xi = 1$.
+
+Pour $\xi=1$, $t_{5\%}\omega_0 = 5$. Ainsi pour réduire le temps de réponse à 5\% il faut augmenter $\omega_0$ et donc diminuer $T$.
+
+Pour un temps de réponse à 5\% de \SI{0,1}{s}, il faut $\omega_0 = \dfrac{5}{0,1}=\SI{50}{rad.s^{-1}}$ et $T=\SI{0,02}{s}$ (valeur maximale).
+
 \end{corrige}
 \else
 \fi
@@ -234,7 +267,18 @@ la perturbation sur l’intervalle $[\SI{1,25}{rad.s^{-1}};\SI{12,5}{rad.s^{-1}}
 la valeur limite de $T$ permettant de satisfaire l’atténuation de la perturbation liée à l’exigence
 de « précision » sur cet intervalle.}
 \ifprof
-\begin{corrige}
+\begin{corrige} 
+On a  $B(p)=\dfrac{Tp\left(2+Tp \right)}{\left(1+Tp\right)^2}$.
+
+Pour minimiser l'effet de la perturbation, il faut que décaler la cassure vers la droite. D'après le cahier des charges, l'effet de la perturbation doit être divisé par 100. L'atténuation en dB doit donc être de $20\log \dfrac{1}{100} = -\SI{40}{dB}$. 
+
+Il faut donc chercher $T$ pour lequel le gain est de \SI{-40}{dB}. En passant $B(p)$ sous forme canonique et en se plaçant en basse fréquence, on a $B(p)\simeq 2Tp$. On a donc $B_{\text{dB}}(\omega)=20\log \left(2T\omega \right)$. 
+
+On veut $B_{\text{dB}}(12,5)=20\log \left(2T\times 12,5\right) < -40$
+soit $\log \left(2T\times 12,5\right) < -2$ $\Rightarrow  2T\times 12,5< e^{-2}$
+$\Rightarrow  T< e^{-2}/25$ et $T<\SI{0,005}{s}$. 
+
+%la cassure ait lieu après \SI{12,5}{rad.s^{-1}}. Pour cela il faut diminuer $T$. On peut prendre $T=1/12,5=\SI{0,08}{s}$.
 \end{corrige}
 \else
 \fi
