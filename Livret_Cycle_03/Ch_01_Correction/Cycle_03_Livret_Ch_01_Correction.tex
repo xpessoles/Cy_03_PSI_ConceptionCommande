@@ -8,6 +8,10 @@
 \input{../../style/Cycle_03_Entete}
 \usepackage{caption}
 
+\def\xxYCartouche{-2.25cm}
+\def\xxYongletGarde{.9cm}
+\def\xxYOnget{.9cm}
+
 \usepackage{tikz}
 \usepackage{schemabloc}
 %\usepackage{rpcinematik}
@@ -21,6 +25,7 @@
 
 \newif\ifeleve
 \elevefalse
+\elevetrue
 
 \begin{document}
 \ifeleve
@@ -92,12 +97,12 @@
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
 %% Sujet colle
-\newpage
-\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
-\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
-\input{../../Chapitre_01_Correction/\td/\td.tex}
-\else
+%\newpage
+%\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
+%\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
+%\input{../../Chapitre_01_Correction/\td/\td.tex}
 
+\else
 %% Sujet Corrigé
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
@@ -116,10 +121,10 @@
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
 %% Sujet colle
-\newpage
-\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
-\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
-\input{../../Chapitre_01_Correction/\td/\td.tex}
+%\newpage
+%\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
+%\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
+%\input{../../Chapitre_01_Correction/\td/\td.tex}
 
 
 \else
@@ -142,10 +147,10 @@
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
 %% Sujet colle
-\newpage
-\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
-\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
-\input{../../Chapitre_01_Correction/\td/\td.tex}
+%\newpage
+%\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
+%\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
+%\input{../../Chapitre_01_Correction/\td/\td.tex}
 
 
 \else
@@ -201,10 +206,10 @@
 \input{../../Chapitre_01_Correction/\td/\td.tex}
 
 %% Sujet colle
-\newpage
-\fichetrue \proffalse \tdtrue \coursfalse \normalfalse \difficiletrue \tdifficilefalse \colletrue
-\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
-\input{../../Chapitre_01_Correction/\td/\td.tex}
+%\newpage
+%\fichetrue \proffalse \tdtrue \coursfalse \normalfalse \difficiletrue \tdifficilefalse \colletrue
+%\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
+%\input{../../Chapitre_01_Correction/\td/\td.tex}
 
 \else
 
@@ -216,29 +221,29 @@
 
 \fi
 
-%% TD Retard de phase 1 Quille de bateau Mines Ponts Normal
-\renewcommand{\td}{Cy_03_01_TD_RP_01_Quille}
-%% Sujet Normal par défaut
-\ifeleve
-\newpage
-\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
-\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
-\input{../../Chapitre_01_Correction/\td/\td.tex}
-
-
-%% Sujet colle (TO DO)
-\newpage
-\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
-\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
-\input{../../Chapitre_01_Correction/\td/\td.tex}
-
-\else
-%% Sujet Corrigé
-\newpage
-\fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
-\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
-\input{../../Chapitre_01_Correction/\td/\td.tex}
-\fi
+%%% TD Retard de phase 1 Quille de bateau Mines Ponts Normal
+%\renewcommand{\td}{Cy_03_01_TD_RP_01_Quille}
+%%% Sujet Normal par défaut
+%\ifeleve
+%\newpage
+%\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
+%\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
+%\input{../../Chapitre_01_Correction/\td/\td.tex}
+%
+%
+%%% Sujet colle (TO DO)
+%%\newpage
+%%\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
+%%\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
+%%\input{../../Chapitre_01_Correction/\td/\td.tex}
+%
+%\else
+%%% Sujet Corrigé
+%\newpage
+%\fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
+%\graphicspath{{../../style/png/}{../../Chapitre_01_Correction/\td/images/}}
+%\input{../../Chapitre_01_Correction/\td/\td.tex}
+%\fi
 
 %% Application
 %% Sujet
