@@ -59,8 +59,14 @@ Afin d'isoler des cellules issues du pancréas, il est nécessaire de les baigne
 un agitateur médical avec chambre de Riccordi.
 
 
+\begin{obj}
 La maîtrise de la température joue un rôle crucial, l’objectif de notre étude est de réduire les temps
-de réaction et d’augmenter la précision en température du système de chauffage.
+de réaction et d’augmenter la précision en température du système de chauffage. Le cahier des charges est le suivant : 
+\begin{itemize}
+\item temps de montée en température : \SI{3}{min} maxi;
+\item précision de la température : $\pm \SI{0,5}{\degres}$ pour un échelon de $\SI{20}{\degres}$.
+\end{itemize}
+\end{obj}
 Nous utilisons pour chauffer la solution circulant dans la chambre, un collier chauffant situé sur le
 pourtour de la chambre, alimenté en tension par une unité comprenant un correcteur et un
 amplificateur.
@@ -77,7 +83,7 @@ On note :
 \item $U_t$ : tension à l'image de la température (capteur de température mesurant la température dans la chambre);
 \item $U_a$ : tension d'alimentation du collier chauffant;
 \item $q_c$ : énergie calorifique fournie par le collier chauffant;
-\item $q_p$ : énergie calorifique perdue ou reçue par la chambre (en dehors du collier chauffant) perte par convection, par circulation de l'enzyme.
+\item $q_p$ : énergie calorifique perdue ou reçue par la chambre (en dehors du collier chauffant) perte par convection, par circulation de l'enzyme. Dans le cadre de cette étude \textbf{on néglige les pertes}.
 \end{itemize}
 
 \begin{center}
@@ -123,9 +129,9 @@ On envisage une première correction en utilisant un correcteur proportionnel de
 
 \subparagraph{}\textit{En déduire le temps de réponse à 5\%, l'écart en position et l'écart de traînage.}
 
-\subparagraph{}\textit{Déterminez alors, la tension en entrée de l'amplificateur , si on envoie un échelon de tension de consigne $U_{tc}$ de \SI{5}{V}. Le gain de l'amplificateur étant de 10, critiquez vos résultats.}
+\subparagraph{}\textit{Déterminez alors, la tension en sortie de l'amplificateur , si on envoie un échelon de tension de consigne $U_{tc}$ de \SI{5}{V}. Le gain de l'amplificateur étant de 10, critiquez vos résultats.}
 
-On souhaite maintenant corriger le système avec en utilisant une action proportionnelle intégrale $C(p)=\dfrac{K}{T_i p}\left( 1+T_i p\right)$. On souhaite que la montée en température soit de 3 minutes maximum. 
+On souhaite maintenant corriger le système avec en utilisant une action proportionnelle intégrale $C(p)=\dfrac{K}{T_i p}\left( 1+T_i p\right)$. On utilise pour cela la méthode des compensation de pôles. 
 
 \subparagraph{}\textit{Déterminer les gain $K$ et $T_i$ permettant d'assurer le non dépassement de la consigne ainsi que le temps de réponses du système.}
 
