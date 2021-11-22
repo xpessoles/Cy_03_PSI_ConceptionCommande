@@ -89,7 +89,7 @@ Chapitre 1 -- \xxactivite%
 \def\pathfig{images}
 
 \begin{multicols}{2}
-Un four électrique destiné au traitement thermique d'objets est constitué d'une enceinte close chauffée par une résistance électrique alimentée par une tension v(t). Dix objets peuvent prendre place simultanément dans le four. Le traitement thermique consiste à maintenir les objets pendant 1 heure à une température de 1200\degres C (régulée de façon optimale car les objets sont détruits si la température dépasse  1400\degres C).
+Un four électrique destiné au traitement thermique d'objets est constitué d'une enceinte close chauffée par une résistance électrique alimentée par une tension $ v(t)$. Dix objets peuvent prendre place simultanément dans le four. Le traitement thermique consiste à maintenir les objets pendant 1 heure à une température de 1200\degres C (régulée de façon optimale car les objets sont détruits si la température dépasse  1400\degres C).
 Entre deux cuissons, un temps de 24 minutes est nécessaire pour procéder au refroidissement du four et à la manutention.
 Le four est régi par l’équation différentielle : $\dfrac{\text{d}\theta(t)}{\text{d}t}+2000\dfrac{\text{d}^2\theta(t)}{\text{d}t^2}=0,02 v(t)$.
 
@@ -100,10 +100,16 @@ On décide de réguler la température $\theta(t)$ dans le four en utilisant un 
 
 \subparagraph{}\textit{Faire le schéma de la boucle de régulation et calculer sa fonction de transfert en boucle fermée. Rappeler  les conditions de stabilité d'un système.}
 
-\subparagraph{}\textit{On souhaite se placer dans des conditions de stabilité suffisantes en imposant une marge de phase $\Delta \varphi= 45\degres$. Quelle  est dans ces conditions, la valeur du temps de montée en boucle fermée (voir ci-dessous) ?}
+
+\vspace{.25cm}
 
 On donne $t_m$ le temps de montée du système en BF et $t_m\simeq \dfrac{3}{\omega_{\text{co}}}$ et $\omega_{\text{co}}$ est la pulsation de coupure à \SI{0}{dB} du système en BO.  
 
+\vspace{.25cm}
+
+\subparagraph{}\textit{On souhaite se placer dans des conditions de stabilité suffisantes en imposant une marge de phase $\Delta \varphi= 45\degres$. Quelle  est dans ces conditions, la valeur du temps de montée en boucle fermée  ?}
+
+\vspace{.25cm}
 On souhaite atteindre une cadence de 100 pièces en 24h, ceci est obtenu pour $K=11,3$.
 
 \subparagraph{}
